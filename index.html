@@ -9,29 +9,66 @@
     <script src="https://kit.fontawesome.com/14c1e6c054.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <title>Document</title>
 </head>
 
 <body>
-    <h1>Welcome to Mars!</h1>
-    <!-- <p>Some text about the game</p>
+    <section class="welcomeSection">
+        <h1>Welcome to Mars!</h1>
+        <!-- <p>Some text about the game</p>
     <label for "username">Enter player name</label>
     <input type="text" id="username"> -->
+    </section>
 
     <section id="game section">
+        
         <div id="choicesdiv">
-            <div class="choice">Rock</div>
-            <div>Paper</div>
-            <div>Scissors</div>
-            <div>Lizard</div>
-            <div>Spock</div>
+            <div class="choices">
+                <button class="choiceButton" id="rock"></button>
+                <label for="rock">Rock</label>
+            </div>
+            <div class="choices">
+                <button class="choiceButton" id="paper"></button>
+                <label for="paper">Paper</label>
+            </div>
+            <div class="choices">
+                <button class="choiceButton" id="scissors"></button>
+                <label for="scissors">Scissors</label>
+            </div>
+            <div class="choices">
+                <button class="choiceButton" id="lizard"></button>
+                <label for="lizard">Lizard</label>
+            </div>
+            <div class="choice">
+                <button class="choiceButton" id="spock"></button>
+                <label for="spock">Spock</label>
+            </div>
         </div>
+
+        <div class="resultsDiv">
+            <p class="score">Your score: <span id="userScore">0</span></p>
+            <p class="score">Data's score: <span id="computerScore">0</span></p>
+            <p class="score">Ties: <span id="tieScore">0</span></p>
+
+            <p class="yayOrBoo"><span>Yay or Boo function to be created for this span.</span></p>
+            <p class="explainRuleapplied">Rule applied: <span id="reason">Function to be created</span></p>
+            
+            <button id="continue" class="game-control"></button>
+            <label for="continue" type="submit">continue</label>
+            <button id="reset" type="reset" class="game-control"></button>
+            <label for="reset">reset</label>
+        </div>
+        
+    </section>
+
+    <section class="resultsSection">
 
     </section>
 
-    
+
 
     <script src="assets/js/script.js"></script>
 </body>
