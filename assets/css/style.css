@@ -1,3 +1,32 @@
+body {
+    color: darkgreen;
+}
+
+#gameSection {
+    width: 90vw;
+}
+
 h1 {
-    color: blue;
+    font-family: Lato, sans-serif;
+}
+.choicesDiv {
+    width: 90vw;
+    display:flex;
+    flex-direction: row;
+    justify-content: center space-around;
+    flex-wrap: wrap;
+}
+
+.choices {
+   border-style: 1 px solid;
+}
+
+.choiceButton {
+    background-color: lightgreen;
+    min-width: 150px;
+    min-height: 150px;
+} 
+
+.displayNone {
+    display: none;
 }
