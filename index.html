@@ -18,14 +18,37 @@
 <body>
     <section class="welcomeSection">
         <h1>Welcome to Mars!</h1>
-        <p>Some text about the game</p>
-    <label for "username">Enter a player name: </label>
-    <input type="text" id="playername" name="playername">
+        <div>
+            <p>My name is Gorge. No, not George--<emphasis>gorge</emphasis>--as in, "Yes I know I'm so gooooorgeous, and
+                btw you're looking fab, too." Anyhoo, I'll be your tour guide while you're here.</p>
+            <p>The first thing you simply must know is how to play Rock, Paper, Scissors, Lizard, Spock. You see, we
+                like to keep this a secret off-world, but we make most of our decisions through a process of elimination
+                by playing it. Funnily enough, though "Rock, Paper, Scissors" was imported from Earth eons ago, you
+                Earthlings never seem to have caught on to our improved method, which results in fewer ties (and is fun
+                with more
+                players, too). We'd be insulted but we've come to realize that the rules may simply be too complex for
+                the average Earthling, at least judging from the cognitive testing you put your supreme leaders through.
+                What was it, "person, woman, man, camera, TV"? Sad.</p>
+            <p>Instead of giving you the rules of game, I decided to create a little practice game for you. Each time
+                you play a round against the computer, the relevant rule will display.
+                Don't worry. If you want to keep playing after you've learned the rules, you can just reset the scores
+                back to zero to start afresh. For now, you'll be playing against the computer. But just wait until you
+                get to play against one of us! Better hurry up and learn, though, you'll be needing this skill
+                throughout your travels, more than you know, my friend!
+            </p>
+            <p>So here goes. Please enter a player name. No one here uses their real name, so make it a good one.</p>
+            <p>
+                <label for "playername">Enter your fun player name: </label>
+                <input type="text" id="playerName" name="playername" placeholder="Player name">
+                <button id"submitName">Assume your new identity!</button>
+            </p>
+            <P><span id="greetNewPlayer">Greeting to new player to show here.</span></P>
+        </div>
     </section>
 
     <section class="gameSection">
-        
-        <div id="choicesdiv">
+
+        <div id="choicesDiv">
             <div class="choices">
                 <button class="choiceButton" id="rock">Rock</button>
                 <label for="rock" class="displayNone">Rock</label>
@@ -57,13 +80,13 @@
         </div>
 
         <div class="resultsDiv">
-            <p class="score">Your score: <span id="userScore">0</span></p>
+            <p class="score">Your score: <span id="playerScore">0</span></p>
             <p class="score">Data's score: <span id="computerScore">0</span></p>
             <p class="score">Ties: <span id="tieScore">0</span></p>
 
             <p class="yayOrBoo"><span>Yay or Boo function to be created for this span.</span></p>
             <p class="explainRuleapplied">Rule applied: <span id="reason">Function to be created</span></p>
-            
+
             <button id="continue" class="game-control"></button>
             <label for="continue" type="submit">continue</label>
             <button id="reset" type="reset" class="game-control"></button>
