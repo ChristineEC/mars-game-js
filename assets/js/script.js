@@ -1,34 +1,39 @@
 
 
 
-// generateComputerchoice() {
 
-// }
-
-
-/**Add event listeners to buttons */
+/**Add event listeners to choice buttons */
 let choiceButtons = document.getElementsByClassName("choiceButton");
 
 for (let i=0; i < choiceButtons.length; i++) {
     choiceButtons[i].addEventListener('click', getPlayerChoice);
 }
 
+//*Display player choice in results section*/
 function getPlayerChoice() {
-    console.log("You clicked the button!");
+    document.getElementById("playerChoice").innerHTML = this.id;
 }
 
-function genComputerChoice() {
-    let numComp = Math.floor(Math.random() * 5) +1;
-    console.log(numComp);
-    if numComp = 1 {
-        document.getElementById(computerChoice).innerHTML = "rock"
-    } else if numComp = 2 {
-        document.getElementById(computerChoice).innerHTML = "paper"
-    } else if numComp = 3 {
-        document.getElementById(computerChoice).innerHTML = "scissors"
-    } else if numnumComp = 4 {
-        document.getElementById(computerChoice).innerHTML = "lizard"
-    } else if numComp = 5 {
-        document.getElementById(computerChoice).innerHTML = "spock"
+
+function getComputerChoice() {
+    let compNumber = Math.floor(Math.random() * 5) +1;
+    console.log(compNumber);
+
+    function displayComputerChoice() {
+
+        if (compNumber === 1) {
+            document.getElementById("computerChoice").innerHTML = "rock";
+        }
+        else if (compNumber === 2) {
+                document.getElementById("computerChoice").innerHTML = "paper";
+        } else if (compNumber === 3) {
+            document.getElementById("computerChoice").innerHTML = "scissors";
+        } else if (compNumber === 4) {
+            document.getElementById("computerChoice").innerHTML = "lizard";
+        } else if (compNumber === 5) {
+            document.getElementById("computerChoice").innerHTML = "spock";
+        }
     }
 }
+
+       
