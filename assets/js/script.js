@@ -1,9 +1,19 @@
 //**Get playername and display it */
-// document.getElementbyId("submitName").addEventListener('submit', displayName);
-// function displayName() {
-//     getElementById("playerName").value
 
-// }
+const nameForm = document.getElementById("form");
+nameForm.addEventListener('submit', displayPlayerName);
+
+function displayPlayerName(event) {
+    event.preventDefault();
+    console.log("testing");
+    let playersName = form.elements["playerName"].value;
+    let greetingSpan = document.getElementById("greetNewPlayer");
+    greetingSpan.innerHTML = `Greetings ${playersName}!`;
+}
+
+
+
+
 
 
 
