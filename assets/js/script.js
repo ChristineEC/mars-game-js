@@ -2,6 +2,7 @@
 
 const nameForm = document.getElementById("form");
 nameForm.addEventListener('submit', displayPlayerName);
+generateComputerChoice();
  
 function displayPlayerName(event) {
     event.preventDefault();
@@ -10,7 +11,7 @@ function displayPlayerName(event) {
     let greetingSpan = document.getElementById("greetNewPlayer");
     greetingSpan.innerHTML = `Greetings ${playersName}! 
     Click an icon to make your choice. The computer chooses simultaneously.`;
-    generateComputerChoice();
+    // generateComputerChoice();
 }
 
 
