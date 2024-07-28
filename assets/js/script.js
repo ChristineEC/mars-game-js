@@ -1,4 +1,21 @@
+//*
+ Wait for document to load before all else */
+
+//* Toggle dark-mode */
+
+function toggleDark() {
+    let toggleDButton = document.getElementById("toggleDark");
+    toggleDButton.addEventListener('click', darkMode);
+}
+
+function darkMode(event) {
+    let element = document.body;
+    element.classList.toggle("dark-mode");
+}
+
+
 //**Get playername and display it */
+
 
 const nameForm = document.getElementById("form");
 nameForm.addEventListener('submit', displayPlayerName);
@@ -24,7 +41,7 @@ for (let i = 0; i < choiceButtons.length; i++) {
 
 //*Display player and computer choice in results section*/
 function getPlayerChoice() {
-    document.getElementById("playerChoice").innerHTML = `You chose: ${this.id}`;
+    document.getElementById("playerChoice").innerHTML = `You chose ${this.id}`;
     displayComputerChoice();
     generateComputerChoice();
 

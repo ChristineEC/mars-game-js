@@ -1,10 +1,24 @@
+/* Wildcard selector to override default settings of the browser */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
-
-body {
-    color: darkgreen;
+body { 
+    color: rgb(2, 60, 2);
     padding: 1rem;
     font-family: Roboto;
-    box-sizing: border-box;
+    background-color: #fffff;
+}
+
+.dark-mode {
+    background-color: rgb(2, 60, 2);
+    color: #ffffff;
+}
+
+.displayNone {
+    display: none;
 }
 
 /* Welcome section */
@@ -27,24 +41,41 @@ h1 > div {
     padding-top: 2rem;
     width: 90%;
     display: flex;
-    justify-content: center space-around;
-    gap: 2rem;
+    justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
+    padding-bottom: 2rem;
+    gap: 5rem;
 }
 
 .choices {
-   border-style: 1 0 1 px gray;
-   flex-basis: 1;
-}
+   display: flex;
+   flex-direction: column;
 
 .choiceButton {
     background-color: lightgreen;
-    min-width: 150px;
-    min-height: 150px;
-    border-radius: 20px;
-    box-shadow: 0 1 1 gray;
+    min-width: 75px;
+    min-height: 75px;
+    border-radius: 50px;
+    font-size: 300%;
+    /* From CSS scan (https://getcssscan.com/css-box-shadow-examples) */
+    box-shadow: rgb(85, 91, 255) 0px 0px 0px 1px, rgb(31, 193, 27) 0px 0px 0px 2px, rgb(255, 217, 19) 0px 0px 0px 3px, rgb(255, 156, 85) 0px 0px 0px 4px, rgb(255, 85, 85) 0px 0px 0px 5px;
 } 
 
-.displayNone {
-    display: none;
+.fakelabel {
+    padding-top: 0.5rem;
+    text-align: center;
+}
+/* Display results section */
+
+.results-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 5rem;
+}
+
+.choicesRevealed {
+    flex-basis: 1;
+    padding-left: 5rem;
+    padding-right: 5rem;
 }
