@@ -14,20 +14,17 @@
 
 
 //**Get playername and display it */
-
-
 const nameForm = document.getElementById("form");
 nameForm.addEventListener('submit', displayPlayerName);
-generateComputerChoice();
- 
+// generateComputerChoice();
+
 function displayPlayerName(event) {
     event.preventDefault();
-    console.log("testing");
     let playersName = form.elements["playerName"].value;
     let greetingSpan = document.getElementById("greetNewPlayer");
     greetingSpan.innerHTML = `Greetings ${playersName}! 
     Click an icon to make your choice. The computer chooses simultaneously.`;
-    // generateComputerChoice();
+    generateComputerChoice();
 }
 
 
@@ -38,9 +35,9 @@ for (let i = 0; i < choiceButtons.length; i++) {
     choiceButtons[i].addEventListener('click', getPlayerChoice);
 }
 
-//*Display player and computer choice in results section*/
+//*Display player choice in results section*/
 function getPlayerChoice() {
-    document.getElementById("playerChoice").innerHTML = `You chose ${this.id}`;
+    document.getElementById("playerChoice").innerHTML = `${this.id}`;
     displayComputerChoice();
     generateComputerChoice();
 
@@ -53,34 +50,60 @@ function generateComputerChoice() {
     console.log(compNumber);
 }
 
+/**Display computer choice in results section */
 function displayComputerChoice() {
     let hiddenNumber = document.getElementById("compNumber").innerHTML;
     if (hiddenNumber === "1") {
-        document.getElementById("computerChoice").innerHTML = "The computer chose rock";
+        document.getElementById("computerChoice").innerHTML = "rock";
     } else if (hiddenNumber === "2") {
-        document.getElementById("computerChoice").innerHTML = "The computer chose paper";
+        document.getElementById("computerChoice").innerHTML = "paper";
     } else if (hiddenNumber === "3") {
-        document.getElementById("computerChoice").innerHTML = "The computer chose scissors";
+        document.getElementById("computerChoice").innerHTML = "scissors";
     } else if (hiddenNumber === "4") {
-        document.getElementById("computerChoice").innerHTML = "The computer chose lizard";
+        document.getElementById("computerChoice").innerHTML = "lizard";
     } else if (hiddenNumber === "5") {
-        document.getElementById("computerChoice").innerHTML = "The computer chose Spock";
+        document.getElementById("computerChoice").innerHTML = "Spock";
     }
 }
 
+/** Compare player and computer choices to announce win loss or tie
+ * and the relevant rule in play
+ */
 
-function incrementPlayerScore() {
+function compareChoices() {
+    let playerChoice = document.getElementById("playerChoice").innerHTML;
+    let computerChoice = document.getElementById("computerChoice").innerHTML;
+    console.log(playerChoice);   // These are working
+    console.log(computerChoice);
+    if (playerChoice === computerChoice) {
+        document.getElementById("winnerAnnounced").innerHTML = "Tie Game";}
+        else {console.log("error here");}
+    // } else if (playerChoice === "rock") && ((computerChoice === "lizard") || ("computerChoice === "scissors"))) 
+    //     {document.getElementById("winnerAnnounced").innerHTML = `${playerName} wins! Rock smashes both lizard and scissors.`;
+    //     }
+    // else if ((playerChoice === "rock") && ((computerChoice === "paper") || (computerChoice === "Spock"))) 
+    // {document.getElementById("winnerAnnounced").innerHTML = "The computer wins. The two things that can beat rock are paper and Spock. Paper covers rock and Spock vaporizes rock.";
+    //         } else {
+    //                 console.log("Player did not choose 'rock'");
+    //             }
+    }
 
-}
+    compareChoices();
+            // else if ((playerChoice = "paper") && ())
+            //     }
 
-function incrementComputerScore() {
+            function incrementPlayerScore() {
 
-}
+            }
 
-function incrementTieScore() {
+            function incrementComputerScore() {
 
-}
+            }
 
-function displayRule() {
+            function incrementTieScore() {
 
-}
+            }
+
+            function displayRule() {
+
+            }
