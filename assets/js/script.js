@@ -25,7 +25,7 @@ for (let i = 0; i < choiceButtons.length; i++) {
 function getPlayerChoice() {
     document.getElementById("playerChoice").innerHTML = `You chose: ${this.id}`;
     displayComputerChoice();
-    // generateComputerChoice();
+    generateComputerChoice();
 
 }
 
