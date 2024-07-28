@@ -47,7 +47,6 @@ function getPlayerChoice() {
 function generateComputerChoice() {
     let compNumber = Math.floor(Math.random() * 5) + 1;
     document.getElementById("compNumber").innerHTML = compNumber;
-    console.log(compNumber);
 }
 
 /**Display computer choice in results section */
@@ -65,45 +64,104 @@ function displayComputerChoice() {
         document.getElementById("computerChoice").innerHTML = "Spock";
     }
 }
+/**Event listener to call compare function */
+document.getElementById("getWinner").addEventListener('click', compareChoices);
 
 /** Compare player and computer choices to announce win loss or tie
  * and the relevant rule in play
  */
-
 function compareChoices() {
     let playerChoice = document.getElementById("playerChoice").innerHTML;
     let computerChoice = document.getElementById("computerChoice").innerHTML;
-    console.log(playerChoice);   // These are working
-    console.log(computerChoice);
-    if (playerChoice === computerChoice) {
-        document.getElementById("winnerAnnounced").innerHTML = "Tie Game";}
-        else {console.log("error here");}
-    // } else if (playerChoice === "rock") && ((computerChoice === "lizard") || ("computerChoice === "scissors"))) 
-    //     {document.getElementById("winnerAnnounced").innerHTML = `${playerName} wins! Rock smashes both lizard and scissors.`;
-    //     }
-    // else if ((playerChoice === "rock") && ((computerChoice === "paper") || (computerChoice === "Spock"))) 
-    // {document.getElementById("winnerAnnounced").innerHTML = "The computer wins. The two things that can beat rock are paper and Spock. Paper covers rock and Spock vaporizes rock.";
-    //         } else {
-    //                 console.log("Player did not choose 'rock'");
-    //             }
-    }
+    if (playerChoice = computerChoice) {
+throw("BIG ERROR");
+        // document.getElementById("winnerAnnounced").innerHTML = "Tie Game";
+    } else if (playerChoice === "rock") {
+        if (computerChoice === "paper") {
+            document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
+            document.getElementById("reason").innerHTML = "Paper covers rock";
+        } else if (computerChoice === "scissors") {
+            document.getElementById("winnerAnnounced").innerHTML = "You win!";
+            document.getElementById("reason").innerHTML = "Rock smashes scissors";
+        } else if (computerChoice === "lizard") {
+            document.getElementById("winnerAnnounced").innerHTML = "You win!";
+            document.getElementById("reason").innerHTML = "Rock smashes lizard";
+        } else if (computerChoice === "Spock") {
+            document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
+            document.getElementById("reason").innerHTML = "Spock vaporizes rock";
+        }
+    } else if (playerChoice === "paper") {
+        if (computerChoice === "rock") {
+            document.getElementById("winnerAnnounced").innerHTML = "You win!";
+            document.getElementById("reason").innerHTML = "Paper covers rock";
+        } else if (computerChoice === "scissors") {
+            document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
+            document.getElementById("reason").innerHTML = "Scissors cuts paper";
+        } else if (computerChoice === "lizard") {
+            document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
+            document.getElementById("reason").innerHTML = "Lizard eats paper";
+        } else if (computerChoice === "Spock") {
+            document.getElementById("winnerAnnounced").innerHTML = "You win!";
+            document.getElementById("reason").innerHTML = "Paper disproves Spock";
+        }
+    } else if (playerChoice === "scissors") {
+        if (computerChoice === "rock") {
+            document.getElementById("winnerAnnounced").innerHTML = "Computer wins!";
+            document.getElementById("reason").innerHTML = "Rock smashes scissors";
+        } else if (computerChoice === "paper") {
+            document.getElementById("winnerAnnounced").innerHTML = "You win!";
+            document.getElementById("reason").innerHTML = "Scissors cuts paper";
+        } else if (computerChoice === "lizard") {
+            document.getElementById("winnerAnnounced").innerHTML = "You win!";
+            document.getElementById("reason").innerHTML = "Scissors decapitates lizard";
+        } else if (computerChoice === "Spock") {
+            document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
+            document.getElementById("reason").innerHTML = "Spock smashes scissors";
+        }
+    } else if (playerChoice === "lizard") {
+        if (computerChoice === "rock") {
+            document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
+            document.getElementById("reason").innerHTML = "Rock smashes lizard";
+        } else if (computerChoice === "paper") {
+            document.getElementById("winnerAnnounced").innerHTML = "You win!";
+            document.getElementById("reason").innerHTML = "Lizard eats paper";
+        } else if (computerChoice === "scissors") {
+            document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
+            document.getElementById("reason").innerHTML = "Scissors decapitates lizard";
+        } else if (computerChoice === "Spock") {
+            document.getElementById("winnerAnnounced").innerHTML = "You win!";
+            document.getElementById("reason").innerHTML = "Lizard poisons Spock";
+        }
+    } else if (playerChoice === "Spock") {
+        if (computerChoice === "rock") {
+            document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
+            document.getElementById("reason").innerHTML = "Spock vaporizes rock";
+        } else if (computerChoice === "paper") {
+            document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
+            document.getElementById("reason").innerHTML = "Paper disproves Spock";
+        } else if (computerChoice === "scissors") {
+            document.getElementById("winnerAnnounced").innerHTML = "You win!";
+            document.getElementById("reason").innerHTML = "Spock smashes scissors";
+        } else if (computerChoice === "lizard") {
+            document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
+            document.getElementById("reason").innerHTML = "Lizard poisons Spock";
+        }
+    } else {
+        throw("There is an error somewhere. This is illogical.");}
+}
 
-    compareChoices();
-            // else if ((playerChoice = "paper") && ())
-            //     }
+function incrementPlayerScore() {
 
-            function incrementPlayerScore() {
+}
 
-            }
+function incrementComputerScore() {
 
-            function incrementComputerScore() {
+}
 
-            }
+function incrementTieScore() {
 
-            function incrementTieScore() {
+}
 
-            }
+function displayRule() {
 
-            function displayRule() {
-
-            }
+}

@@ -19,12 +19,16 @@
     <section class="welcomeSection">
         <h1>Welcome to Mars!</h1>
         <button id="toggleDark">toggle dark-mode</button>
-        <p>You can call me Gorge. As in gooooorgeous. Btw you're looking pretty fab, yourself. Anyhoo, I'll be your tour guide. The first thing you simply must know is how to play Rock, Paper, Scissors, Lizard, Spock. You see, we
-            like to keep this under wraps off-world, but we make most of our decisions this way. Otherwise we'd never be able to agree on anything.</p>
+        <p>You can call me Gorge. As in gooooorgeous. Btw you're looking pretty fab, yourself. Anyhoo, I'll be your tour
+            guide. The first thing you simply must know is how to play Rock, Paper, Scissors, Lizard, Spock. You see, we
+            like to keep this under wraps off-world, but we make most of our decisions this way. Otherwise we'd never be
+            able to agree on anything.</p>
         <div class="toggle-text">
             <p> Funnily enough, we got "Rock, Paper, Scissors" from y'all eons ago, but you
-                Earthlings never seem to have caught on to our improved method. It's much better you know--fewer ties and more blood and all that. 
-                Why, we'd be insulted at Earth's refusal to adopt our improvements to the game, but we've come to realize that the rules may simply be too complex for
+                Earthlings never seem to have caught on to our improved method. It's much better you know--fewer ties
+                and more blood and all that.
+                Why, we'd be insulted at Earth's refusal to adopt our improvements to the game, but we've come to
+                realize that the rules may simply be too complex for
                 the average Earthling, at least judging from the cognitive testing you put your supreme leaders through.
                 What was it, "person, woman, man, camera, TV"? Sad.</p>
             <p>Instead of giving you the rules of game, I decided to create a little practice game for you. Each time
@@ -82,7 +86,13 @@
                 <p>You chose: <span id="playerChoice"></span></p>
             </div>
             <div class="choicesRevealed">
-                <p>The computer chose: <span id="compNumber" class="displayNone">Computer's numerical choice</span></span><span id="computerChoice"></span></p>
+                <p>The computer chose: <span id="compNumber" class="displayNone"></span></span><span id="computerChoice"></span></p>
+            </div>
+            <div>
+                <button type="submit" id="getWinner">Who wins? Why?</button>
+                <label for="getWinner" class="displayNone">Reveal the winner of this round and the rule that decides it</label>
+            <div>
+                <p id="reason"></p>
             </div>
             <div class="scores">
                 <p class="score">Your score: <span id="playerScore">0</span></p>
@@ -94,7 +104,8 @@
         <div class="winnerAndWhy">
 
             <p class><span id="winnerAnnounced"></span></p>
-            <p class="explainRuleapplied">This span show the output of a function that takes pair of choices as parameters to return the relevant rule.</span></p>
+            <p class="explainRuleapplied">This span show the output of a function that takes pair of choices as
+                parameters to return the relevant rule.</span></p>
             <button id="got-it">Will increment the scores based on html content win/lose/draw.</button>
             <button id="reset" type="reset" class="game-control">Reset game</button>
         </div>
