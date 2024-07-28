@@ -78,8 +78,8 @@ function compareChoices() {
     console.log(document.getElementById("computerChoice").innerHTML);
     console.log(computerChoice);
     if (playerChoice === computerChoice) {
-throw("BIG ERROR");
-        // document.getElementById("winnerAnnounced").innerHTML = "Tie Game";
+        document.getElementById("winnerAnnounced").innerHTML = "Tie Game";
+        document.getElementById("reason").innerHTML = "";
     } else if (playerChoice === "rock") {
         if (computerChoice === "paper") {
             document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
@@ -150,8 +150,7 @@ throw("BIG ERROR");
             document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
             document.getElementById("reason").innerHTML = "Lizard poisons Spock";
         }
-    } else {
-        throw("There is an error somewhere. This is illogical.");}
+    } 
 }
 
 function incrementPlayerScore() {
