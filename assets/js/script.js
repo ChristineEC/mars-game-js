@@ -1,17 +1,16 @@
-//*
- Wait for document to load before all else */
+//* Wait for document to load before all else */
 
 //* Toggle dark-mode */
 
-function toggleDark() {
-    let toggleDButton = document.getElementById("toggleDark");
-    toggleDButton.addEventListener('click', darkMode);
-}
+// function toggleDark() {
+//     let toggleDButton = document.getElementById("toggleDark");
+//     toggleDButton.addEventListener('click', darkMode);
+// }
 
-function darkMode(event) {
-    let element = document.body;
-    element.classList.toggle("dark-mode");
-}
+// function darkMode(event) {
+//     let element = document.body;
+//     element.classList.toggle("dark-mode");
+// }
 
 
 //**Get playername and display it */
