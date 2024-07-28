@@ -39,8 +39,7 @@
             <p>So here goes. Please enter a player name. No one here uses their real name, so make it a good one.</p>
             <form action="" method="get" id="form">
                     <label for "playername">Enter a fun player name: </label>
-                    <input type="text" id="playerName" name="playername" placeholder="Player name">
-                    <!-- <input type="submit" value="Assume your new identity!" maxlength="15" required> -->
+                    <input type="text" id="playerName" name="playername" placeholder="Player name" maxlength="15">
             </form>
             <P><span id="greetNewPlayer"></span></P>
         </div>
@@ -76,7 +75,7 @@
     <section class="resultsSection">
         <div class="chosen">
             <span id="playerChoice"></span>
-            <span id="compNumber"></span><span id="computerChoice"></span>
+            <span id="compNumber" class="displayNone"></span><span id="computerChoice"></span>
         </div>
 
         <div class="resultsDiv">
