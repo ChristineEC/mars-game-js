@@ -16,7 +16,7 @@
 //**Get playername and display it */
 const nameForm = document.getElementById("form");
 nameForm.addEventListener('submit', displayPlayerName);
-// generateComputerChoice();
+generateComputerChoice();
 
 function displayPlayerName(event) {
     event.preventDefault();
@@ -24,7 +24,7 @@ function displayPlayerName(event) {
     let greetingSpan = document.getElementById("greetNewPlayer");
     greetingSpan.innerHTML = `Greetings ${playersName}! 
     Click an icon to make your choice. The computer chooses simultaneously.`;
-    generateComputerChoice();
+    // generateComputerChoice();
 }
 
 
@@ -73,7 +73,11 @@ document.getElementById("getWinner").addEventListener('click', compareChoices);
 function compareChoices() {
     let playerChoice = document.getElementById("playerChoice").innerHTML;
     let computerChoice = document.getElementById("computerChoice").innerHTML;
-    if (playerChoice = computerChoice) {
+    console.log(document.getElementById("playerChoice").innerHTML);
+    console.log(playerChoice);
+    console.log(document.getElementById("computerChoice").innerHTML);
+    console.log(computerChoice);
+    if (playerChoice === computerChoice) {
 throw("BIG ERROR");
         // document.getElementById("winnerAnnounced").innerHTML = "Tie Game";
     } else if (playerChoice === "rock") {
