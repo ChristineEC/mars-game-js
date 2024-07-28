@@ -40,9 +40,9 @@
             <form action="" method="get" id="form">
                     <label for "playername">Enter a fun player name: </label>
                     <input type="text" id="playerName" name="playername" placeholder="Player name">
-                    <input type="submit" value="Assume your new identity!">
+                    <!-- <input type="submit" value="Assume your new identity!" maxlength="15" required> -->
             </form>
-            <P><span id="greetNewPlayer">Greeting to new player to show here.</span></P>
+            <P><span id="greetNewPlayer"></span></P>
         </div>
     </section>
 
@@ -75,13 +75,13 @@
 
     <section class="resultsSection">
         <div class="chosen">
-            <span id="playerChoice">holding text playerChoice</span>
-            <span id="computerChoice">holding text computerChoice</span>
+            <span id="playerChoice"></span>
+            <span id="compNumber"></span><span id="computerChoice"></span>
         </div>
 
         <div class="resultsDiv">
             <p class="score">Your score: <span id="playerScore">0</span></p>
-            <p class="score">Data's score: <span id="computerScore">0</span></p>
+            <p class="score">Computer's score: <span id="computerScore">0</span></p>
             <p class="score">Ties: <span id="tieScore">0</span></p>
 
             <p class="yayOrBoo"><span>Yay or Boo function to be created for this span.</span></p>
