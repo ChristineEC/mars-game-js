@@ -21,10 +21,26 @@ body {
 h1 {
     font-family: Lato, sans-serif;
     text-align: center;
+    padding-bottom: 1rem;
 }
 
-h1 > div {
+/* Intro text */
+.toggle-text {
+    display: none;
 }
+/* Player Name section */
+.playerNameDiv {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 75%;
+    margin: auto;
+    line-height: 1.5;
+}
+
+.playerNameDiv > p, form {
+    padding-top = 1rem;
+}
+
 
 /* Game section */
 
