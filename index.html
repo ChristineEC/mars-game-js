@@ -55,7 +55,7 @@
                     <input type="text" id="playerName" name="playername" placeholder="Player name" maxlength="15"
                         required>
                 </form>
-                <P><span id="greetNewPlayer"></span></P>
+                <h2><span id="greetNewPlayer"></span></h2>
                
             </div>
             
@@ -105,11 +105,11 @@
                     <button type="submit" id="getWinner">Who wins? Why?</button>
                     <label for="getWinner" class="displayNone" aria-label="reveal winner and relevant rule"></label>
                     
-                <div>
-                    <p id="winnerAnnounced" class="inline-block"></p>
+                <div class="resultsDisplay">
+                    <p id="winnerAnnounced" class="inline-block" ></p>
                     <p id="reason" class="inline-block"></p>
                 </div>
-                <div>
+                <div class="resultsDisplay">
                     <p class="inline-block">Your score: <span id="playerScore">0</span></p> 
                     <p class="inline-block">Computer's score: <span id="computerScore">0</span></p>
                     <p class="inline-block">Ties: <span id="tieScore">0</span></p>
