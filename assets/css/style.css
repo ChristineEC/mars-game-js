@@ -10,7 +10,7 @@ body {
     padding: 1rem;
     font-family: Roboto;
     background-color: rgb(2, 60, 2);
-    /* idea for this from Love Maths lesson */
+    /* idea for this centering from Love Maths lesson */
     text-align: center;
     margin: 5px 0;
 }
@@ -87,7 +87,12 @@ h1 {
 }
 /* Display results section */
 
+.resultsDisplay {
+    display: flex;
+    flex-direction: column;
+}
+
 .inline-block {
-    display: inline-block;
+    display: inline-block !important;
     padding: 2rem;
 }

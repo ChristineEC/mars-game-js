@@ -10,10 +10,16 @@ document.addEventListener("DOMContentLoaded", function() {
     nameForm.addEventListener('submit', displayPlayerName);
 
     //Event listeners for choice buttons */
-    let choiceButtons = document.getElementsByClassName("choiceButton");
+    let choiceButtons = document.getElementsByClassName("choiceBtn");
     for (let i = 0; i < choiceButtons.length; i++) {
     choiceButtons[i].addEventListener('click', getPlayerChoice);
+    console.log("buttons working");
     }
+
+    //Event listener for score reset button
+    let resetScore = document.getElementById("resetScore");
+    resetScore.addEventListener("click", resetScore);
+    
 
     generateComputerChoice();
 
@@ -25,6 +31,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let toggleArea = document.getElementById("game-wrapper");
     toggleArea.style["background-color"] = "#ffffff" ? toggleArea.style["background-color"] = "rgb(2, 60, 2)" : toggleArea["background-color"] = "#ffffff";
     toggleArea.style["color"] = "rgb(2, 60, 2)" ?  toggleArea.style["color"] = "#ffffff" : toggleArea["color"] = "rgb(2, 60, 2)";
+    toggleArea.style["background-color"] = "rgb(2, 60, 2)" ? toggleArea["background-color"] = "#ffffff" : toggleArea.style["background-color"] = "rgb(2, 60, 2)";
+    toggleArea.style["color"] = "#ffffff" ? toggleArea["color"] = "rgb(2, 60, 2)" : toggleArea.style["color"] = "#ffffff";
     }
 
 // Display player name in greeting
@@ -42,7 +50,6 @@ function getPlayerChoice() {
     document.getElementById("playerChoice").innerHTML = `${this.id}`;
     displayComputerChoice();
     generateComputerChoice();
-
 }
 
 // Generate random number for Computer Choice
@@ -167,6 +174,12 @@ function incrementComputerScore() {
 
 function incrementTieScore() {
 
+}
+
+function resetScore (event) {
+    document.getElementById("playerScore").innerHTML = "0";
+    document.getElementById("computerScore").innerHTML = "0";
+    console.log("reset function called");
 }
 
 // need to fix game loop
