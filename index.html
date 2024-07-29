@@ -19,10 +19,10 @@
     <div id=game-wrapper>
         <section class="welcomeSection">
             <h1>Welcome to Mars!</h1>
-
             <p id="shortIntro">The first thing you must know is how to play Rock, Paper, Scissors, Lizard, Spock. We
                 like to keep this under wraps off-world, but we make most of our decisions this way. We've created this
-                tutorial to teach you the rules.   <button id="toggleDark" class="float-right">Dark/Light Mode</button></p>
+                tutorial to teach you the rules. <button id="toggleDark" class="float-right">Dark/Light Mode</button>
+            </p>
             <div class="toggle-text">
                 <p> Funnily enough, we got "Rock, Paper, Scissors" from y'all eons ago, but you
                     Earthlings never seem to have caught on to our* improved method. It's much better you know--fewer
@@ -50,19 +50,15 @@
             <div class="playerNameDiv">
                 <form action="" method="get" id="form">
                     <label for="playerName">Please enter a player name. No one here uses their real name, so make it a
-                        good
-                        one!</label>
+                        good one!</label>
                     <input type="text" id="playerName" name="playername" placeholder="Player name" maxlength="15"
                         required>
                 </form>
                 <h2><span id="greetNewPlayer"></span></h2>
-               
             </div>
-            
         </section>
-
+        
         <section class="gameSection">
-
             <div id="choicesDiv">
                 <div class="choices">
                     <button class="choiceBtn" id="rock"><i class="fa-regular fa-hand-back-fist"></i></button>
@@ -91,34 +87,42 @@
                 </div>
             </div>
 
-        </section>
+            <h3>Results</h3>
 
-        <section class="resultsSection">
             <div class="results-wrapper">
-                <div class="resultsDisplay">
-                    <p class="inline-block">You chose: </p>
-                    <p class="inline-block" class="inline-block" id="playerChoice"></p>
-                    <p class="inline-block">The computer chose: <span id="compNumber" class="displayNone"></span></p>
-                    <p class="inline-block" id="computerChoice"></p>
+                <div id="displayChoicesMade">
+                    <div>
+                    <p>You chose: <span id="playerChoice"></span></p>
+                    </div>
+                    <div>
+                        <p>The computer chose: <span id="compNumber" class="displayNone"></span ><span id="computerChoice"></span></p>
+                    </div>
                 </div>
 
-                    <button type="submit" id="getWinner">Who wins? Why?</button>
-                    <label for="getWinner" class="displayNone" aria-label="reveal winner and relevant rule"></label>
-                    
-                <div class="resultsDisplay">
-                    <p id="winnerAnnounced" class="inline-block" ></p>
-                    <p id="reason" class="inline-block"></p>
-                </div>
-                <div class="resultsDisplay">
-                    <p class="inline-block">Your score: <span id="playerScore">0</span></p> 
-                    <p class="inline-block">Computer's score: <span id="computerScore">0</span></p>
-                    <p class="inline-block">Ties: <span id="tieScore">0</span></p>
-                </div>
+                <button type="submit" id="getWinner">Who wins? Why?</button>
+                <label for="getWinner" class="displayNone" aria-label="reveal winner and relevant rule"></label>
 
+                <div id="announceWin">
+                        <p id="winnerAnnounced"></p>
+                    </div>
+                    <div>
+                        <p id="reason"></p>
+                    </div>
+                </div>
+                <div id="displayScore">
+                    <div>
+                        <p>Your score: <span id="playerScore">0</span></p>
+                    </div>
+                    <div>
+                        <p>Computer's score: <span id="computerScore">0</span></p>
+                    </div>
+                    <div>
+                        <p>Ties: <span id="tieScore">0</span></p>
+                    </div>
+                </div>
                 <button id="resetScore">to reset score</button>
             </div>
-
-    </section>
+        </section>
     </div>
     <script src="assets/js/script.js"></script>
 </body>

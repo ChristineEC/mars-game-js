@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let i = 0; i < choiceButtons.length; i++) {
     choiceButtons[i].addEventListener('click', getPlayerChoice);
     console.log("buttons working");
-    }
+    };
 
     //Event listener for score reset button
     let resetScore = document.getElementById("resetScore");
@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let toggleArea = document.getElementById("game-wrapper");
     toggleArea.style["background-color"] = "#ffffff" ? toggleArea.style["background-color"] = "rgb(2, 60, 2)" : toggleArea["background-color"] = "#ffffff";
     toggleArea.style["color"] = "rgb(2, 60, 2)" ?  toggleArea.style["color"] = "#ffffff" : toggleArea["color"] = "rgb(2, 60, 2)";
-    toggleArea.style["background-color"] = "rgb(2, 60, 2)" ? toggleArea["background-color"] = "#ffffff" : toggleArea.style["background-color"] = "rgb(2, 60, 2)";
-    toggleArea.style["color"] = "#ffffff" ? toggleArea["color"] = "rgb(2, 60, 2)" : toggleArea.style["color"] = "#ffffff";
+    // toggleArea.style["background-color"] = "rgb(2, 60, 2)" ? toggleArea["background-color"] = "#ffffff" : toggleArea.style["background-color"] = "rgb(2, 60, 2)";
+    // toggleArea.style["color"] = "#ffffff" ? toggleArea["color"] = "rgb(2, 60, 2)" : toggleArea.style["color"] = "#ffffff";
     }
 
 // Display player name in greeting
