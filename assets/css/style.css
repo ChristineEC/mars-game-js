@@ -10,6 +10,10 @@ body {
     padding: 1rem;
     font-family: Roboto;
     background-color: #fffff;
+    width: 90%;
+    /* idea for this from Love Maths lesson */
+    text-align: center;
+
 }
 
 .displayNone {
@@ -41,6 +45,9 @@ h1 {
     padding-top = 1rem;
 }
 
+.float-right {
+    float: right;
+}
 
 /* Game section */
 

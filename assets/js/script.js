@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let i = 0; i < choiceButtons.length; i++) {
     choiceButtons[i].addEventListener('click', getPlayerChoice);
     }
-    
+
     generateComputerChoice();
 
 });
@@ -22,9 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
 // Toggle between light and dark mode function
     function toggleDark(event) {
     console.log("button works");
-    let body = document.getElementByTagType(body);
-    body.style["background-color"] = "#ffffff" ? body.style["background-color"] = "rgb(2, 60, 2)" : body.style["background-color"] = "#ffffff";
-    body.style["color"] = "rgb(2, 60, 2)" ?  body.style["color"] = "#ffffff" : body.style["color"] = "rgb(2, 60, 2)";
+    let toggleArea = document.getElementById("game-wrapper");
+    toggleArea.style["background-color"] = "#ffffff" ? toggleArea.style["background-color"] = "rgb(2, 60, 2)" : toggleArea["background-color"] = "#ffffff";
+    toggleArea.style["color"] = "rgb(2, 60, 2)" ?  toggleArea.style["color"] = "#ffffff" : toggleArea["color"] = "rgb(2, 60, 2)";
     }
 
 // Display player name in greeting
