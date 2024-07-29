@@ -1,38 +1,40 @@
 //* Wait for document to load before all else */
 
-//* Toggle dark-mode */
+document.body.onload = console.log("The document has loaded");
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("DOM content loaded");
+    //Toggle button listener
+    document.getElementById("toggleDark").addEventListener('click', toggleDark);
+    //Event listener for player name input
+    const nameForm = document.getElementById("form");
+    nameForm.addEventListener('submit', displayPlayerName);
 
-// function toggleDark() {
-//     let toggleDButton = document.getElementById("toggleDark");
-//     toggleDButton.addEventListener('click', darkMode);
-// }
+    //Event listeners for choice buttons */
+    let choiceButtons = document.getElementsByClassName("choiceButton");
+    for (let i = 0; i < choiceButtons.length; i++) {
+    choiceButtons[i].addEventListener('click', getPlayerChoice);
+    }
+    
+    generateComputerChoice();
 
-// function darkMode(event) {
-//     let element = document.body;
-//     element.classList.toggle("dark-mode");
-// }
+});
 
+// Toggle between light and dark mode function
+    function toggleDark(event) {
+    console.log("button works");
+    let body = document.getElementByTagType(body);
+    body.style["background-color"] = "#ffffff" ? body.style["background-color"] = "rgb(2, 60, 2)" : body.style["background-color"] = "#ffffff";
+    body.style["color"] = "rgb(2, 60, 2)" ?  body.style["color"] = "#ffffff" : body.style["color"] = "rgb(2, 60, 2)";
+    }
 
-//**Get playername and display it */
-const nameForm = document.getElementById("form");
-nameForm.addEventListener('submit', displayPlayerName);
-generateComputerChoice();
+// Display player name in greeting
 
 function displayPlayerName(event) {
     event.preventDefault();
     let playersName = form.elements["playerName"].value;
     let greetingSpan = document.getElementById("greetNewPlayer");
     greetingSpan.innerHTML = `Greetings ${playersName}! 
-    Click an icon to make your choice. The computer chooses simultaneously.`;
-    // generateComputerChoice();
-}
-
-
-/**Add event listeners to choice buttons */
-let choiceButtons = document.getElementsByClassName("choiceButton");
-
-for (let i = 0; i < choiceButtons.length; i++) {
-    choiceButtons[i].addEventListener('click', getPlayerChoice);
+    Click an icon to make your choice.`;
 }
 
 //*Display player choice in results section*/
@@ -43,13 +45,14 @@ function getPlayerChoice() {
 
 }
 
-/** Generate computer choice */
+// Generate random number for Computer Choice
 function generateComputerChoice() {
     let compNumber = Math.floor(Math.random() * 5) + 1;
     document.getElementById("compNumber").innerHTML = compNumber;
 }
 
-/**Display computer choice in results section */
+/**Translate random number to computer choice 
+ * and display in results section */
 function displayComputerChoice() {
     let hiddenNumber = document.getElementById("compNumber").innerHTML;
     if (hiddenNumber === "1") {
@@ -64,6 +67,7 @@ function displayComputerChoice() {
         document.getElementById("computerChoice").innerHTML = "Spock";
     }
 }
+
 /**Event listener to call compare function */
 document.getElementById("getWinner").addEventListener('click', compareChoices);
 
@@ -73,10 +77,10 @@ document.getElementById("getWinner").addEventListener('click', compareChoices);
 function compareChoices() {
     let playerChoice = document.getElementById("playerChoice").innerHTML;
     let computerChoice = document.getElementById("computerChoice").innerHTML;
-    console.log(document.getElementById("playerChoice").innerHTML);
-    console.log(playerChoice);
-    console.log(document.getElementById("computerChoice").innerHTML);
-    console.log(computerChoice);
+    // console.log(document.getElementById("playerChoice").innerHTML);
+    // console.log(playerChoice);
+    // console.log(document.getElementById("computerChoice").innerHTML);
+    // console.log(computerChoice);
     if (playerChoice === computerChoice) {
         document.getElementById("winnerAnnounced").innerHTML = "Tie Game";
         document.getElementById("reason").innerHTML = "";
@@ -165,6 +169,4 @@ function incrementTieScore() {
 
 }
 
-function displayRule() {
-
-}
+// need to fix game loop
