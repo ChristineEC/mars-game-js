@@ -17,102 +17,109 @@
 
 <body class="dark-mode">
     <div id=game-wrapper>
-    <section class="welcomeSection">
-        <h1>Welcome to Mars!</h1>
+        <section class="welcomeSection">
+            <h1>Welcome to Mars!</h1>
 
-        <p>The first thing you must know is how to play Rock, Paper, Scissors, Lizard, Spock. We
-            like to keep this under wraps off-world, but we make most of our decisions this way. We've created this
-            tutorial to teach you the rules.</p>
-        <div class="toggle-text">
-            <p> Funnily enough, we got "Rock, Paper, Scissors" from y'all eons ago, but you
-                Earthlings never seem to have caught on to our* improved method. It's much better you know--fewer ties
-                and more blood and all that.
-                Why, we'd be insulted at Earth's refusal to adopt our improvements to the game, but we've come to
-                realize that the rules may simply be too complex for
-                the average Earthling, at least judging from the cognitive testing you put your supreme leaders through.
-                What was it, "person, woman, man, camera, TV"? Sad.</p>
-            <p><strong>*Note: the game was actually created by Sam Kass, a software engineer from Earth. The Martians
-                    are always stealing our stuff!</strong></p>
-            <p>Instead of giving you the rules of game, we decided to create this little practice game for you. Each
-                time
-                you play a round against the computer, the relevant rule will display.
-                Don't worry. If you want to keep playing after you've learned the rules, you can just reset the scores
-                back to zero to start afresh. For now, you'll be playing against the computer. But just wait until you
-                get to play against one of us! Better hurry up and learn, though, you'll be needing this skill
-                throughout your travels--more than you know, my friend!
-            </p>
-        </div>
-        <div class="playerNameDiv">
-            <form action="" method="get" id="form">
-                <label for="playerName">Please enter a player name. No one here uses their real name, so make it a good
-                    one!</label>
-                <input type="text" id="playerName" name="playername" placeholder="Player name" maxlength="15" required>
-            </form>
-            <P><span id="greetNewPlayer"></span></P>
-        </div>
-        <button id="toggleDark" class="float-right">Dark/Light Mode</button>
-    </section>
+            <p id="shortIntro">The first thing you must know is how to play Rock, Paper, Scissors, Lizard, Spock. We
+                like to keep this under wraps off-world, but we make most of our decisions this way. We've created this
+                tutorial to teach you the rules.   <button id="toggleDark" class="float-right">Dark/Light Mode</button></p>
+            <div class="toggle-text">
+                <p> Funnily enough, we got "Rock, Paper, Scissors" from y'all eons ago, but you
+                    Earthlings never seem to have caught on to our* improved method. It's much better you know--fewer
+                    ties
+                    and more blood and all that.
+                    Why, we'd be insulted at Earth's refusal to adopt our improvements to the game, but we've come to
+                    realize that the rules may simply be too complex for
+                    the average Earthling, at least judging from the cognitive testing you put your supreme leaders
+                    through.
+                    What was it, "person, woman, man, camera, TV"? Sad.</p>
+                <p><strong>*Note: the game was actually created by Sam Kass, a software engineer from Earth. The
+                        Martians
+                        are always stealing our stuff!</strong></p>
+                <p>Instead of giving you the rules of game, we decided to create this little practice game for you. Each
+                    time
+                    you play a round against the computer, the relevant rule will display.
+                    Don't worry. If you want to keep playing after you've learned the rules, you can just reset the
+                    scores
+                    back to zero to start afresh. For now, you'll be playing against the computer. But just wait until
+                    you
+                    get to play against one of us! Better hurry up and learn, though, you'll be needing this skill
+                    throughout your travels--more than you know, my friend!
+                </p>
+            </div>
+            <div class="playerNameDiv">
+                <form action="" method="get" id="form">
+                    <label for="playerName">Please enter a player name. No one here uses their real name, so make it a
+                        good
+                        one!</label>
+                    <input type="text" id="playerName" name="playername" placeholder="Player name" maxlength="15"
+                        required>
+                </form>
+                <P><span id="greetNewPlayer"></span></P>
+               
+            </div>
+            
+        </section>
 
-    <section class="gameSection">
+        <section class="gameSection">
 
-        <div id="choicesDiv">
-            <div class="choices">
-                <button class="choiceButton" id="rock"><i class="fa-regular fa-hand-back-fist"></i></button>
-                <label for="rock" class="displayNone">Rock</label>
-                <p class="fakelabel">ROCK</p>
+            <div id="choicesDiv">
+                <div class="choices">
+                    <button class="choiceBtn" id="rock"><i class="fa-regular fa-hand-back-fist"></i></button>
+                    <label for="rock" class="displayNone">Rock</label>
+                    <p class="fakelabel">ROCK</p>
+                </div>
+                <div class="choices">
+                    <button class="choiceBtn" id="paper"><i class="fa-regular fa-hand"></i></button>
+                    <label for="paper" class="displayNone">Paper</label>
+                    <p class="fakelabel">PAPER</p>
+                </div>
+                <div class="choices">
+                    <button class="choiceBtn" id="scissors"><i class="fa-regular fa-hand-scissors"></i></button>
+                    <label for="scissors" class="displayNone">Scissors</label>
+                    <p class="fakelabel">SCISSORS</p>
+                </div>
+                <div class="choices">
+                    <button class="choiceBtn" id="lizard"><i class="fa-regular fa-hand-lizard"></i></button>
+                    <label for="lizard" class="displayNone">Lizard</label>
+                    <p class="fakelabel">LIZARD</p>
+                </div>
+                <div class="choices">
+                    <button class="choiceBtn" id="spock"><i class="fa-regular fa-hand-spock"></i></button>
+                    <label for="spock" class="displayNone">Spock</label>
+                    <p class="fakelabel">SPOCK</p>
+                </div>
             </div>
-            <div class="choices">
-                <button class="choiceButton" id="paper"><i class="fa-regular fa-hand"></i></button>
-                <label for="paper" class="displayNone">Paper</label>
-                <p class="fakelabel">PAPER</p>
-            </div>
-            <div class="choices">
-                <button class="choiceButton" id="scissors"><i class="fa-regular fa-hand-scissors"></i></button>
-                <label for="scissors" class="displayNone">Scissors</label>
-                <p class="fakelabel">SCISSORS</p>
-            </div>
-            <div class="choices">
-                <button class="choiceButton" id="lizard"><i class="fa-regular fa-hand-lizard"></i></button>
-                <label for="lizard" class="displayNone">Lizard</label>
-                <p class="fakelabel">LIZARD</p>
-            </div>
-            <div class="choices">
-                <button class="choiceButton" id="spock"><i class="fa-regular fa-hand-spock"></i></button>
-                <label for="spock" class="displayNone">Spock</label>
-                <p class="fakelabel">SPOCK</p>
-            </div>
-        </div>
 
-    </section>
+        </section>
 
-    <section class="resultsSection">
-        <div class="results-wrapper">
-            <div class="choicesRevealed">
-                <p>You chose: <span id="playerChoice"></span></p>
-            </div>
-            <div class="choicesRevealed">
-                <p>The computer chose: <span id="compNumber" class="displayNone"></span></span><span
-                        id="computerChoice"></span></p>
-            </div>
-            <div>
-                <button type="submit" id="getWinner">Who wins? Why?</button>
-                <label for="getWinner" class="displayNone">Reveal the winner of this round and the rule that decides
-                    it</label>
+        <section class="resultsSection">
+            <div class="results-wrapper">
+                <div class="resultsDisplay">
+                    <p class="inline-block">You chose: </p>
+                    <p class="inline-block" class="inline-block" id="playerChoice"></p>
+                    <p class="inline-block">The computer chose: <span id="compNumber" class="displayNone"></span></p>
+                    <p class="inline-block" id="computerChoice"></p>
+                </div>
+
+                    <button type="submit" id="getWinner">Who wins? Why?</button>
+                    <label for="getWinner" class="displayNone" aria-label="reveal winner and relevant rule"></label>
+                    
                 <div>
-                    <p id="winnerAnnounced"></p>
-                    <p id="reason"></p>
+                    <p id="winnerAnnounced" class="inline-block"></p>
+                    <p id="reason" class="inline-block"></p>
                 </div>
-                <div class="scores">
-                    <p class="score">Your score: <span id="playerScore">0</span></p>
-                    <p class="score">Computer's score: <span id="computerScore">0</span></p>
-                    <p class="score">Ties: <span id="tieScore">0</span></p>
+                <div>
+                    <p class="inline-block">Your score: <span id="playerScore">0</span></p> 
+                    <p class="inline-block">Computer's score: <span id="computerScore">0</span></p>
+                    <p class="inline-block">Ties: <span id="tieScore">0</span></p>
                 </div>
+
+                <button id="reset" type="reset" class="game-control">to reset game</button>
             </div>
-            <button id="reset" type="reset" class="game-control">Currently uncalled button to reset game</button>
-        </div>
 
     </section>
-</div>
+    </div>
     <script src="assets/js/script.js"></script>
 </body>
 

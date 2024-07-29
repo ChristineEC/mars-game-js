@@ -5,15 +5,14 @@
     box-sizing: border-box;
 }
 
-body { 
-    color: rgb(2, 60, 2);
+body {
+    color: #ffffff;
     padding: 1rem;
     font-family: Roboto;
-    background-color: #fffff;
-    width: 90%;
+    background-color: rgb(2, 60, 2);
     /* idea for this from Love Maths lesson */
     text-align: center;
-
+    margin: 5px 0;
 }
 
 .displayNone {
@@ -29,6 +28,10 @@ h1 {
 }
 
 /* Intro text */
+
+#shortIntro {
+    text-align: left;
+}
 .toggle-text {
     display: none;
 }
@@ -38,11 +41,10 @@ h1 {
     padding-bottom: 1rem;
     width: 75%;
     margin: auto;
-    line-height: 1.5;
 }
 
 .playerNameDiv > p, form {
-    padding-top = 1rem;
+    padding-top: 2rem;
 }
 
 .float-right {
@@ -52,12 +54,12 @@ h1 {
 /* Game section */
 
 .gameSection {
-    
+
 }
 
 #choicesDiv {
     padding-top: 2rem;
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -70,14 +72,13 @@ h1 {
    display: flex;
    flex-direction: column;
 
-.choiceButton {
+.choiceBtn {
     background-color: lightgreen;
     min-width: 75px;
     min-height: 75px;
     border-radius: 50px;
     font-size: 300%;
-    /* From CSS scan (https://getcssscan.com/css-box-shadow-examples) */
-    box-shadow: rgb(85, 91, 255) 0px 0px 0px 1px, rgb(31, 193, 27) 0px 0px 0px 2px, rgb(255, 217, 19) 0px 0px 0px 3px, rgb(255, 156, 85) 0px 0px 0px 4px, rgb(255, 85, 85) 0px 0px 0px 5px;
+    border: 2px #fff;
 } 
 
 .fakelabel {
@@ -86,14 +87,7 @@ h1 {
 }
 /* Display results section */
 
-.results-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 5rem;
-}
-
-.choicesRevealed {
-    flex-basis: 1;
-    padding-left: 5rem;
-    padding-right: 5rem;
+.inline-block {
+    display: inline-block;
+    padding: 2rem;
 }
