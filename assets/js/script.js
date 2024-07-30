@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("DOM content loaded");
 
     //Toggle button listener
-    document.getElementById("game-wrapper").addEventListener('click', toggleDark);
+    let toggleDark = document.getElementById("toggleDark");
+    toggleDark.addEventListener('click', toggleDark);
     
     //Event listener for player name input
     const nameForm = document.getElementById("form");
@@ -18,14 +19,20 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("buttons working");
     };
 
+    generateComputerChoice();
+    console.log("first computer choice generated");
+
+    //Event listener to call compare function and display winner
+    let displayWinner = document.getElementById("displayWinner");
+    displayWinner.addEventListener('click', compareChoices);
+
+    //Event listener for scoring
+    let keepScore = document.getElementById("keepScore");
+    keepScore.addEventListener('click', keepScore);
+
     //Event listener for score reset button
     let resetScore = document.getElementById("resetScore");
     resetScore.addEventListener("click", resetScore);
-    
-    //Event listener to call compare function
-    document.getElementById("getWinner").addEventListener('click', compareChoices);
-
-    generateComputerChoice();
 
 });
 
@@ -82,105 +89,112 @@ function displayComputerChoice() {
     }
 }
 
-
-
 /** Compare player and computer choices to announce win loss or tie
  * and the relevant rule in play
  */
 function compareChoices() {
     let playerChoice = document.getElementById("playerChoice").innerHTML;
     let computerChoice = document.getElementById("computerChoice").innerHTML;
-    // console.log(document.getElementById("playerChoice").innerHTML);
-    // console.log(playerChoice);
-    // console.log(document.getElementById("computerChoice").innerHTML);
-    // console.log(computerChoice);
+    console.log(document.getElementById("playerChoice").innerHTML);
+    console.log(playerChoice);
+    console.log(document.getElementById("computerChoice").innerHTML);
+    console.log(computerChoice);
     if (playerChoice === computerChoice) {
-        document.getElementById("winnerAnnounced").innerHTML = "Tie Game";
+        document.getElementById("displayWinner").innerHTML = "Tie Game";
         document.getElementById("reason").innerHTML = "";
     } else if (playerChoice === "rock") {
         if (computerChoice === "paper") {
-            document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
+            document.getElementById("displayWinner").innerHTML = "Computer wins";
             document.getElementById("reason").innerHTML = "Paper covers rock";
         } else if (computerChoice === "scissors") {
-            document.getElementById("winnerAnnounced").innerHTML = "You win!";
+            document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Rock smashes scissors";
         } else if (computerChoice === "lizard") {
-            document.getElementById("winnerAnnounced").innerHTML = "You win!";
+            document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Rock smashes lizard";
         } else if (computerChoice === "Spock") {
-            document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
+            document.getElementById("displayWinner").innerHTML = "Computer wins";
             document.getElementById("reason").innerHTML = "Spock vaporizes rock";
         }
     } else if (playerChoice === "paper") {
         if (computerChoice === "rock") {
-            document.getElementById("winnerAnnounced").innerHTML = "You win!";
+            document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Paper covers rock";
         } else if (computerChoice === "scissors") {
-            document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
+            document.getElementById("displayWinner").innerHTML = "Computer wins";
             document.getElementById("reason").innerHTML = "Scissors cuts paper";
         } else if (computerChoice === "lizard") {
-            document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
+            document.getElementById("displayWinner").innerHTML = "Computer wins";
             document.getElementById("reason").innerHTML = "Lizard eats paper";
         } else if (computerChoice === "Spock") {
-            document.getElementById("winnerAnnounced").innerHTML = "You win!";
+            document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Paper disproves Spock";
         }
     } else if (playerChoice === "scissors") {
         if (computerChoice === "rock") {
-            document.getElementById("winnerAnnounced").innerHTML = "Computer wins!";
+            document.getElementById("displayWinner").innerHTML = "Computer wins!";
             document.getElementById("reason").innerHTML = "Rock smashes scissors";
         } else if (computerChoice === "paper") {
-            document.getElementById("winnerAnnounced").innerHTML = "You win!";
+            document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Scissors cuts paper";
         } else if (computerChoice === "lizard") {
-            document.getElementById("winnerAnnounced").innerHTML = "You win!";
+            document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Scissors decapitates lizard";
         } else if (computerChoice === "Spock") {
-            document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
+            document.getElementById("displayWinner").innerHTML = "Computer wins";
             document.getElementById("reason").innerHTML = "Spock smashes scissors";
         }
     } else if (playerChoice === "lizard") {
         if (computerChoice === "rock") {
-            document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
+            document.getElementById("displayWinner").innerHTML = "Computer wins";
             document.getElementById("reason").innerHTML = "Rock smashes lizard";
         } else if (computerChoice === "paper") {
-            document.getElementById("winnerAnnounced").innerHTML = "You win!";
+            document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Lizard eats paper";
         } else if (computerChoice === "scissors") {
-            document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
+            document.getElementById("displayWinner").innerHTML = "Computer wins";
             document.getElementById("reason").innerHTML = "Scissors decapitates lizard";
         } else if (computerChoice === "Spock") {
-            document.getElementById("winnerAnnounced").innerHTML = "You win!";
+            document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Lizard poisons Spock";
         }
     } else if (playerChoice === "Spock") {
         if (computerChoice === "rock") {
-            document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
+            document.getElementById("displayWinner").innerHTML = "Computer wins";
             document.getElementById("reason").innerHTML = "Spock vaporizes rock";
         } else if (computerChoice === "paper") {
-            document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
+            document.getElementById("displayWinner").innerHTML = "Computer wins";
             document.getElementById("reason").innerHTML = "Paper disproves Spock";
         } else if (computerChoice === "scissors") {
-            document.getElementById("winnerAnnounced").innerHTML = "You win!";
+            document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Spock smashes scissors";
         } else if (computerChoice === "lizard") {
-            document.getElementById("winnerAnnounced").innerHTML = "Computer wins";
+            document.getElementById("displayWinner").innerHTML = "Computer wins";
             document.getElementById("reason").innerHTML = "Lizard poisons Spock";
         }
     } 
 }
 
-function incrementPlayerScore() {
-
+function keepScore(event) {
+    let playerScore = document.getElementById("playerScore").innerHTML;
+    let computerScore = document.getElementById("computerScore").innerHTML;
+    let tieScore = document.getElementById("tieScore").innerHTML;
+    let pointTaker = document.getElementById("displayWinner").innerHTML;
+    if (pointTaker === "You win!") {
+        playerScore = ++playerScore;
+    }
+    else if (pointTaker === "Computer wins") {
+        computerScore = ++computerScore;
+    }
+    else if (pointTaker === "Tie game") {
+        tieScore = ++tieScore;
+    }
+    else {
+        alert("Something is wrong with the scoring");
+        throw("Error in scoring function");
+    }
 }
 
-function incrementComputerScore() {
-
-}
-
-function incrementTieScore() {
-
-}
 
 function resetScore (event) {
     document.getElementById("playerScore").innerHTML = "0";

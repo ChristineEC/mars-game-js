@@ -99,12 +99,12 @@
                     </div>
                     <div>
                         <button type="submit" id="getWinner" class="p-spacing">Who wins? Why?</button>
-                        <label for="getWinner" class="displayNone" aria-label="reveal winner and relevant rule"></label>       
+                        <label for="displayWinner" class="displayNone" aria-label="reveal winner and relevant rule"></label>       
                     </div>
                 </div>
                 <div id="announceWin">
                     <div class="p-spacing">
-                        <p id="winnerAnnounced"></p>
+                        <p id="displayWinner"></p>
                     </div>
                     <div class="p-spacing">
                         <p id="reason"></p>
@@ -120,7 +120,13 @@
                     <div class="p-spacing">
                         <p>Ties: <span id="tieScore">0</span></p>
                     </div>
-                    <div><button id="resetScore">to reset score</button></div>
+                    <div>
+                        <label for="keepScore">Don't forget to update the score!</label>
+                        <button id="keepScore">Update score</button>
+                    </div>
+                    <div>
+                        <button id="resetScore">Reset score</button>
+                    </div>
                 </div>
             </div>
         </section>
