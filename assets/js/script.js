@@ -1,13 +1,13 @@
 //* Wait for document to load before all else */
 
 document.body.onload = console.log("The document has loaded");
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM content loaded");
 
     //Toggle button listener
     let toggDark = document.getElementById("toggleDark");
     toggDark.addEventListener('click', toggleDark);
-    
+
     //Event listener for player name input
     const nameForm = document.getElementById("form");
     nameForm.addEventListener('submit', displayPlayerName);
@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", function() {
     //Event listeners for choice buttons
     let choiceButtons = document.getElementsByClassName("choiceBtn");
     for (let i = 0; i < choiceButtons.length; i++) {
-    choiceButtons[i].addEventListener('click', getPlayerChoice);
-    console.log("buttons working");
-    };
+        choiceButtons[i].addEventListener('click', getPlayerChoice);
+        console.log("buttons working");
+    }
 
     //Event listener to call compare function and display winner
     let displayWin = document.getElementById("getWinner");
@@ -36,19 +36,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
-// Toggle between light and dark mode function
-    function toggleDark(event) {
-    console.log("button works");
-    let toggleArea = document.getElementById("game-wrapper");
-    // toggleArea.style["background-color"] = "#ffffff" ? toggleArea.style["background-color"] = "rgb(2, 60, 2)" : toggleArea["background-color"] = "#ffffff";
-    // toggleArea.style["color"] = "rgb(2, 60, 2)" ?  toggleArea.style["color"] = "#ffffff" : toggleArea["color"] = "rgb(2, 60, 2)";
-    (toggleArea.style["background-color"] = "rgb(2, 60, 2)") ? (toggleArea["background-color"] = "#ffffff") : (toggleArea.style["background-color"] = "rgb(2, 60, 2)");
-    (toggleArea.style["color"] = "#ffffff") ? (toggleArea["color"] = "rgb(2, 60, 2)") : (toggleArea.style["color"] = "#ffffff");
-    // toggleArea.style["background-color"] = "#ffffff" ? toggleArea.style["background-color"] = "rgb(2, 60, 2)" : toggleArea["background-color"] = "#ffffff";
-    // toggleArea.style["color"] = "rgb(2, 60, 2)" ?  toggleArea.style["color"] = "#ffffff" : toggleArea["color"] = "rgb(2, 60, 2)";
-    };
-
-
 // Display player name in greeting
 function displayPlayerName(event) {
     event.preventDefault();
@@ -56,14 +43,35 @@ function displayPlayerName(event) {
     let greetingSpan = document.getElementById("greetNewPlayer");
     greetingSpan.innerHTML = `Greetings ${playersName}!`;
     let makeYourChoice = document.getElementById("makeYourChoice");
-    makeYourChoice.innerHTML = "Click on an icon below to make your choice"
+    makeYourChoice.innerHTML = "Click on an icon below to make your choice";
 }
+
+// Toggle between light and dark mode function
+// function toggleDark(event) {
+//     console.log("button works");
+//     let toggleArea = document.getElementById("game-wrapper");
+
+//     if (toggleArea.style["background-color"] = "rgb(2, 60, 2)") {
+//         toggleArea.style["background-color"] = "#ffffff";
+//     } else if (toggleArea.style["background-color"] = "#ffffff") {
+//         toggleArea.style["background-color"] = "rgb(2, 60, 2)";
+//     };
+//     if (toggleArea.style["color"] = "#ffffff") {
+//         toggleArea.style["color"] = "rgb(2, 60, 2)";
+//     } else if (toggleArea.style["color"] = "rgb(2, 60, 2)") {
+//         toggleArea.style["color"] = "#ffffff";
+//     }
+//     else {
+//         console.log("toggle function doesn't work and breaks subsequent code");
+//     }
+// }
+
 
 //*Display player choice in results section*/
 function getPlayerChoice() {
     document.getElementById("playerChoice").innerHTML = `${this.id}`;
     console.log("got player choice");
-    console.log("the player choice function is being called")
+    console.log("the player choice function is being called");
     displayComputerChoice();
     generateComputerChoice();
 }
@@ -88,7 +96,8 @@ function displayComputerChoice() {
         document.getElementById("computerChoice").innerHTML = "lizard";
     } else if (hiddenNumber === "5") {
         document.getElementById("computerChoice").innerHTML = "Spock";
-    }
+    };
+    generateComputerChoice();
 }
 
 /** Compare player and computer choices to announce win loss or tie
@@ -101,7 +110,7 @@ function compareChoices(event) {
     console.log(playerChoice);
     console.log(document.getElementById("computerChoice").innerHTML);
     console.log(computerChoice);
-    console.log("The compare button is calling the function")
+    console.log("The compare button is calling the function");
     if (playerChoice === computerChoice) {
         document.getElementById("displayWinner").innerHTML = "Tie Game";
         document.getElementById("reason").innerHTML = "";
@@ -163,7 +172,7 @@ function compareChoices(event) {
         }
     } else if (playerChoice === "Spock") {
         if (computerChoice === "rock") {
-            document.getElementById("displayWinner").innerHTML = "Computer wins";
+            document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Spock vaporizes rock";
         } else if (computerChoice === "paper") {
             document.getElementById("displayWinner").innerHTML = "Computer wins";
@@ -175,7 +184,9 @@ function compareChoices(event) {
             document.getElementById("displayWinner").innerHTML = "Computer wins";
             document.getElementById("reason").innerHTML = "Lizard poisons Spock";
         }
-    };
+    } else {
+        console.log("Is it Spock's fault or the entire loop?");
+    }
 }
 
 function keepScore(event) {
@@ -186,25 +197,22 @@ function keepScore(event) {
     if (pointTaker === "You win!") {
         playerScore = ++playerScore;
         document.getElementById("playerScore").innerHTML = playerScore;
-    }
-    else if (pointTaker === "Computer wins") {
+    } else if (pointTaker === "Computer wins") {
         computerScore = ++computerScore;
         document.getElementById("computerScore").innerHTML = computerScore;
-    }
-    else if (pointTaker === "Tie Game") {
+    } else if (pointTaker === "Tie Game") {
         tieScore = ++tieScore;
         document.getElementById("tieScore").innerHTML = tieScore;
-    }
-    else {
+    } else {
         alert("Something is wrong with the scoring");
-        throw("Error in scoring function");
-    };
+        throw ("Error in scoring function");
+    }
 }
-
 
 function resetScore(event) {
     document.getElementById("playerScore").innerHTML = "0";
     document.getElementById("computerScore").innerHTML = "0";
+    document.getElementById("tieScore").innerHTML = "0";
     console.log("reset function called");
 }
 
