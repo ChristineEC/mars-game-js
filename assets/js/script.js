@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("DOM content loaded");
 
     //Toggle button listener
-    let toggleDark = document.getElementById("toggleDark");
-    toggleDark.addEventListener('click', toggleDark);
+    let toggDark = document.getElementById("toggleDark");
+    toggDark.addEventListener('click', toggleDark);
     
     //Event listener for player name input
     const nameForm = document.getElementById("form");
@@ -19,20 +19,20 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("buttons working");
     };
 
-    generateComputerChoice();
-    console.log("first computer choice generated");
-
     //Event listener to call compare function and display winner
-    let displayWinner = document.getElementById("displayWinner");
-    displayWinner.addEventListener('click', compareChoices);
+    let displayWin = document.getElementById("getWinner");
+    displayWin.addEventListener('click', compareChoices);
 
     //Event listener for scoring
-    let keepScore = document.getElementById("keepScore");
-    keepScore.addEventListener('click', keepScore);
+    let keepScores = document.getElementById("keepScore");
+    keepScores.addEventListener('click', keepScore);
 
     //Event listener for score reset button
-    let resetScore = document.getElementById("resetScore");
-    resetScore.addEventListener("click", resetScore);
+    let reset = document.getElementById("resetScore");
+    reset.addEventListener("click", resetScore);
+
+    // Generate first random number
+    generateComputerChoice();
 
 });
 
@@ -62,6 +62,8 @@ function displayPlayerName(event) {
 //*Display player choice in results section*/
 function getPlayerChoice() {
     document.getElementById("playerChoice").innerHTML = `${this.id}`;
+    console.log("got player choice");
+    console.log("the player choice function is being called")
     displayComputerChoice();
     generateComputerChoice();
 }
@@ -92,13 +94,14 @@ function displayComputerChoice() {
 /** Compare player and computer choices to announce win loss or tie
  * and the relevant rule in play
  */
-function compareChoices() {
+function compareChoices(event) {
     let playerChoice = document.getElementById("playerChoice").innerHTML;
     let computerChoice = document.getElementById("computerChoice").innerHTML;
     console.log(document.getElementById("playerChoice").innerHTML);
     console.log(playerChoice);
     console.log(document.getElementById("computerChoice").innerHTML);
     console.log(computerChoice);
+    console.log("The compare button is calling the function")
     if (playerChoice === computerChoice) {
         document.getElementById("displayWinner").innerHTML = "Tie Game";
         document.getElementById("reason").innerHTML = "";
@@ -172,31 +175,34 @@ function compareChoices() {
             document.getElementById("displayWinner").innerHTML = "Computer wins";
             document.getElementById("reason").innerHTML = "Lizard poisons Spock";
         }
-    } 
+    };
 }
 
 function keepScore(event) {
-    let playerScore = document.getElementById("playerScore").innerHTML;
-    let computerScore = document.getElementById("computerScore").innerHTML;
-    let tieScore = document.getElementById("tieScore").innerHTML;
+    let playerScore = parseInt(document.getElementById("playerScore").innerHTML);
+    let computerScore = parseInt(document.getElementById("computerScore").innerHTML);
+    let tieScore = parseInt(document.getElementById("tieScore").innerHTML);
     let pointTaker = document.getElementById("displayWinner").innerHTML;
     if (pointTaker === "You win!") {
         playerScore = ++playerScore;
+        document.getElementById("playerScore").innerHTML = playerScore;
     }
     else if (pointTaker === "Computer wins") {
         computerScore = ++computerScore;
+        document.getElementById("computerScore").innerHTML = computerScore;
     }
-    else if (pointTaker === "Tie game") {
+    else if (pointTaker === "Tie Game") {
         tieScore = ++tieScore;
+        document.getElementById("tieScore").innerHTML = tieScore;
     }
     else {
         alert("Something is wrong with the scoring");
         throw("Error in scoring function");
-    }
+    };
 }
 
 
-function resetScore (event) {
+function resetScore(event) {
     document.getElementById("playerScore").innerHTML = "0";
     document.getElementById("computerScore").innerHTML = "0";
     console.log("reset function called");
