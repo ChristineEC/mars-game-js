@@ -15,8 +15,8 @@
     <title>Document</title>
 </head>
 
-<body>
-    <div id=game-wrapper>
+<body id=game-wrapper>
+    <div>
         <section class="welcomeSection">
             <h1>Welcome to Mars!</h1>
             <p id="shortIntro">The first thing you must know is how to play Rock, Paper, Scissors, Lizard, Spock. We
@@ -32,11 +32,11 @@
                     realize that the rules may simply be too complex for
                     the average Earthling, at least judging from the cognitive testing you put your supreme leaders
                     through.
-                    What was it, "person, woman, man, camera, TV"? Sad.</p>
+                    What was it, "person, woman, man, camera, TV"?</p>
                 <p><strong>*Note: the game was actually created by Sam Kass, a software engineer from Earth. The
                         Martians
                         are always stealing our stuff!</strong></p>
-                <p>Instead of giving you the rules of game, we decided to create this little practice game for you. Each
+                <p>Anyway, instead of giving you the rules of game, we decided to create this little practice game for you. Each
                     time
                     you play a round against the computer, the relevant rule will display.
                     Don't worry. If you want to keep playing after you've learned the rules, you can just reset the
@@ -44,7 +44,7 @@
                     back to zero to start afresh. For now, you'll be playing against the computer. But just wait until
                     you
                     get to play against one of us! Better hurry up and learn, though, you'll be needing this skill
-                    throughout your travels--more than you know, my friend!
+                    throughout your travels--more than you know, Earthling!
                 </p>
             </div>
             <div class="playerNameDiv">
@@ -55,10 +55,12 @@
                         required>
                 </form>
                 <h2><span id="greetNewPlayer"></span></h2>
+                <h3><span id="makeYourChoice"><span></h3>
             </div>
         </section>
-        
+
         <section class="gameSection">
+            <h3 class="displayNone">Game section</h3>
             <div id="choicesDiv">
                 <div class="choices">
                     <button class="choiceBtn" id="rock"><i class="fa-regular fa-hand-back-fist"></i></button>
@@ -87,40 +89,39 @@
                 </div>
             </div>
 
-            <h3>Results</h3>
-
             <div class="results-wrapper">
                 <div id="displayChoicesMade">
-                    <div>
-                    <p>You chose: <span id="playerChoice"></span></p>
+                    <div class="p-spacing">
+                        <p>You chose: <span id="playerChoice"></span></p>
                     </div>
-                    <div>
+                    <div class="p-spacing">
                         <p>The computer chose: <span id="compNumber" class="displayNone"></span ><span id="computerChoice"></span></p>
                     </div>
+                    <div>
+                        <button type="submit" id="getWinner" class="p-spacing">Who wins? Why?</button>
+                        <label for="getWinner" class="displayNone" aria-label="reveal winner and relevant rule"></label>       
+                    </div>
                 </div>
-
-                <button type="submit" id="getWinner">Who wins? Why?</button>
-                <label for="getWinner" class="displayNone" aria-label="reveal winner and relevant rule"></label>
-
                 <div id="announceWin">
+                    <div class="p-spacing">
                         <p id="winnerAnnounced"></p>
                     </div>
-                    <div>
+                    <div class="p-spacing">
                         <p id="reason"></p>
                     </div>
                 </div>
                 <div id="displayScore">
-                    <div>
+                    <div class="p-spacing">
                         <p>Your score: <span id="playerScore">0</span></p>
                     </div>
-                    <div>
+                    <div class="p-spacing">
                         <p>Computer's score: <span id="computerScore">0</span></p>
                     </div>
-                    <div>
+                    <div class="p-spacing">
                         <p>Ties: <span id="tieScore">0</span></p>
                     </div>
+                    <div><button id="resetScore">to reset score</button></div>
                 </div>
-                <button id="resetScore">to reset score</button>
             </div>
         </section>
     </div>

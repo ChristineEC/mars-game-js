@@ -19,16 +19,15 @@ body {
     display: none;
 }
 
-/* Welcome section */
-
+/* Title */
 h1 {
     font-family: Lato, sans-serif;
     text-align: center;
     padding-bottom: 1rem;
+    letter-spacing: .5rem;
 }
 
 /* Intro text */
-
 #shortIntro {
     text-align: left;
 }
@@ -37,18 +36,29 @@ h1 {
 }
 /* Player Name section */
 .playerNameDiv {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
     width: 75%;
     margin: auto;
 }
 
 .playerNameDiv > p, form {
     padding-top: 2rem;
+} 
+
+form {
+    line-height: 1.5;
 }
 
+
+
+/* Greeting */
 h2 {
     padding-top: 1rem;
+    color: lightgreen;
+    letter-spacing: .67rem;
+}
+
+h3 {
+    padding-top: 0.5rem;
 }
 
 .float-right {
@@ -65,12 +75,13 @@ h2 {
     align-items: center;
     flex-wrap: wrap;
     padding-bottom: 2rem;
-    gap: 5rem;
+    gap: 3rem;
 }
 
 .choices {
    display: flex;
    flex-direction: column;
+}
 
 .choiceBtn {
     background-color: lightgreen;
@@ -86,19 +97,113 @@ h2 {
     text-align: center;
 }
 /* Display results section */
+.results-wrapper {
+    border: 3px dashed lightgreen;
+    padding: 2rem;
+}
+
 #displayChoicesMade {
     display: flex;
-    justify-content: center;
-    border: solid;
+    justify-content: center space-between;
+    flex-wrap: wrap;
 }
 
 #announceWin {
     display: flex;
-    justify-content: center;
-    border: solid;
+    justify-content: center space-between;
+    flex-wrap: wrap;
 }
 
 #displayScore {
     display: flex;
-    border: solid;
+    justify-content: center space-between;
+    align-items:center;
+    flex-wrap: wrap;
+}
+
+#computerChoice,
+#playerChoice {
+    font-style: italic;
+    text-transform: uppercase;
+    color: lightgreen
+}
+
+.p-spacing {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem; 
+    padding-bottom: 1rem;
+    letter-spacing: .25rem;
+}
+
+
+/* Media queries */
+
+@media screen and (max-width: 420px) {
+    h2 {
+        letter-spacing: .15rem;
+    }
+    #choicesDiv {
+        padding-top: .5rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-bottom: .5rem;
+        gap: 1rem;
+    }
+    
+    .p-spacing {
+        padding-left: .15rem;
+        padding-right: .15rem;
+        padding-top: .15rem; 
+        padding-bottom: .15rem;
+        letter-spacing: .15rem;
+    }
+
+    .results-wrapper {
+        border: 3px dashed lightgreen;
+        padding: .15rem;
+    }
+}
+
+
+@media screen and (min-width: 760px) {
+.playerNameDiv {
+    width: 90%;
+    margin: auto;
+}
+}
+
+@media screen and (min-width: 760px) {
+    
+}
+
+@media screen and (min-width: 960px) {
+
+    body {
+        margin-top: 30px;
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+    h1 {
+        padding-bottom: 30px;
+    }
+    #shortIntro {
+        text-align: left;
+        padding-left: 20px;
+        padding-right: 20px;
+        
+    }
+    #choicesDiv {
+        padding-top: 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-bottom: 2rem;
+        gap: 3rem;
+    }
 }

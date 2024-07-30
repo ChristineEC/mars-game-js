@@ -3,13 +3,15 @@
 document.body.onload = console.log("The document has loaded");
 document.addEventListener("DOMContentLoaded", function() {
     console.log("DOM content loaded");
+
     //Toggle button listener
-    document.getElementById("toggleDark").addEventListener('click', toggleDark);
+    document.getElementById("game-wrapper").addEventListener('click', toggleDark);
+    
     //Event listener for player name input
     const nameForm = document.getElementById("form");
     nameForm.addEventListener('submit', displayPlayerName);
 
-    //Event listeners for choice buttons */
+    //Event listeners for choice buttons
     let choiceButtons = document.getElementsByClassName("choiceBtn");
     for (let i = 0; i < choiceButtons.length; i++) {
     choiceButtons[i].addEventListener('click', getPlayerChoice);
@@ -20,6 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let resetScore = document.getElementById("resetScore");
     resetScore.addEventListener("click", resetScore);
     
+    //Event listener to call compare function
+    document.getElementById("getWinner").addEventListener('click', compareChoices);
 
     generateComputerChoice();
 
@@ -29,20 +33,23 @@ document.addEventListener("DOMContentLoaded", function() {
     function toggleDark(event) {
     console.log("button works");
     let toggleArea = document.getElementById("game-wrapper");
-    toggleArea.style["background-color"] = "#ffffff" ? toggleArea.style["background-color"] = "rgb(2, 60, 2)" : toggleArea["background-color"] = "#ffffff";
-    toggleArea.style["color"] = "rgb(2, 60, 2)" ?  toggleArea.style["color"] = "#ffffff" : toggleArea["color"] = "rgb(2, 60, 2)";
-    // toggleArea.style["background-color"] = "rgb(2, 60, 2)" ? toggleArea["background-color"] = "#ffffff" : toggleArea.style["background-color"] = "rgb(2, 60, 2)";
-    // toggleArea.style["color"] = "#ffffff" ? toggleArea["color"] = "rgb(2, 60, 2)" : toggleArea.style["color"] = "#ffffff";
-    }
+    // toggleArea.style["background-color"] = "#ffffff" ? toggleArea.style["background-color"] = "rgb(2, 60, 2)" : toggleArea["background-color"] = "#ffffff";
+    // toggleArea.style["color"] = "rgb(2, 60, 2)" ?  toggleArea.style["color"] = "#ffffff" : toggleArea["color"] = "rgb(2, 60, 2)";
+    (toggleArea.style["background-color"] = "rgb(2, 60, 2)") ? (toggleArea["background-color"] = "#ffffff") : (toggleArea.style["background-color"] = "rgb(2, 60, 2)");
+    (toggleArea.style["color"] = "#ffffff") ? (toggleArea["color"] = "rgb(2, 60, 2)") : (toggleArea.style["color"] = "#ffffff");
+    // toggleArea.style["background-color"] = "#ffffff" ? toggleArea.style["background-color"] = "rgb(2, 60, 2)" : toggleArea["background-color"] = "#ffffff";
+    // toggleArea.style["color"] = "rgb(2, 60, 2)" ?  toggleArea.style["color"] = "#ffffff" : toggleArea["color"] = "rgb(2, 60, 2)";
+    };
+
 
 // Display player name in greeting
-
 function displayPlayerName(event) {
     event.preventDefault();
     let playersName = form.elements["playerName"].value;
     let greetingSpan = document.getElementById("greetNewPlayer");
-    greetingSpan.innerHTML = `Greetings ${playersName}! 
-    Click an icon to make your choice.`;
+    greetingSpan.innerHTML = `Greetings ${playersName}!`;
+    let makeYourChoice = document.getElementById("makeYourChoice");
+    makeYourChoice.innerHTML = "Click on an icon below to make your choice"
 }
 
 //*Display player choice in results section*/
@@ -75,8 +82,7 @@ function displayComputerChoice() {
     }
 }
 
-/**Event listener to call compare function */
-document.getElementById("getWinner").addEventListener('click', compareChoices);
+
 
 /** Compare player and computer choices to announce win loss or tie
  * and the relevant rule in play
