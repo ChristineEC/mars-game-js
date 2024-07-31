@@ -1,8 +1,11 @@
 //* Wait for document to load before all else */
+window.onload = console.log("the window has loaded");
 
-document.body.onload = console.log("The document has loaded");
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("DOM content loaded");
+/** Add event listeners for the buttons
+ * and player name input
+ * and generate the first coputer choice (random number only) */
+window.addEventListener("DOMContentLoaded", function () {
+    console.log("DOMContentLoaded");
 
     //Toggle button listener
     let toggDark = document.getElementById("toggleDark");
@@ -14,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Event listeners for choice buttons
     let choiceButtons = document.getElementsByClassName("choiceBtn");
+    console.log(choiceButtons);
     for (let i = 0; i < choiceButtons.length; i++) {
         choiceButtons[i].addEventListener('click', getPlayerChoice);
         console.log("buttons working");
@@ -33,8 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Generate first random number
     generateComputerChoice();
-
 });
+
 
 // Display player name in greeting
 function displayPlayerName(event) {
@@ -46,34 +50,40 @@ function displayPlayerName(event) {
     makeYourChoice.innerHTML = "Click on an icon below to make your choice";
 }
 
-// Toggle between light and dark mode function
-// function toggleDark(event) {
-//     console.log("button works");
-//     let toggleArea = document.getElementById("game-wrapper");
+/** Toggle between light and dark mode function
+ */
+function toggleDark(event) {
+    console.log("button works");
+    let toggleArea = document.getElementById("game-wrapper");
 
-//     if (toggleArea.style["background-color"] = "rgb(2, 60, 2)") {
-//         toggleArea.style["background-color"] = "#ffffff";
-//     } else if (toggleArea.style["background-color"] = "#ffffff") {
-//         toggleArea.style["background-color"] = "rgb(2, 60, 2)";
-//     };
-//     if (toggleArea.style["color"] = "#ffffff") {
-//         toggleArea.style["color"] = "rgb(2, 60, 2)";
-//     } else if (toggleArea.style["color"] = "rgb(2, 60, 2)") {
-//         toggleArea.style["color"] = "#ffffff";
-//     }
+   
+    if toggleArea.style.background-color == "rgb(2, 60, 2)" {
+        toggleArea.style.background-color == "#ffffff"
+    } else if (toggleArea.style.background-color == "#ffffff") {
+                toggleArea.style.background-color == "rgb(2, 60, 2)";
+            };
+            if (toggleArea.style.color == "#ffffff") {
+                toggleArea.style.color == "rgb(2, 60, 2)";
+            } else if (toggleArea.style.color == "rgb(2, 60, 2)") {
+                toggleArea.style.color == "#ffffff";
+            };
+            else {
+                console.log("toggle function doesn't work and breaks subsequent code");
+            };
 //     else {
 //         console.log("toggle function doesn't work and breaks subsequent code");
-//     }
-// }
+//     };
+}
 
 
-//*Display player choice in results section*/
+/**Get player choice from button and 
+ * display it onscreen in results section.
+ * Also, display computer choice */
 function getPlayerChoice() {
     document.getElementById("playerChoice").innerHTML = `${this.id}`;
-    console.log("got player choice");
+    console.log("got player choice from button");
     console.log("the player choice function is being called");
     displayComputerChoice();
-    generateComputerChoice();
 }
 
 // Generate random number for Computer Choice
@@ -86,6 +96,7 @@ function generateComputerChoice() {
  * and display in results section */
 function displayComputerChoice() {
     let hiddenNumber = document.getElementById("compNumber").innerHTML;
+    console.log('hidden number : ', hiddenNumber)
     if (hiddenNumber === "1") {
         document.getElementById("computerChoice").innerHTML = "rock";
     } else if (hiddenNumber === "2") {
@@ -170,7 +181,7 @@ function compareChoices(event) {
             document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Lizard poisons Spock";
         }
-    } else if (playerChoice === "Spock") {
+    } else if (playerChoice === "spock") {
         if (computerChoice === "rock") {
             document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Spock vaporizes rock";
@@ -215,5 +226,3 @@ function resetScore(event) {
     document.getElementById("tieScore").innerHTML = "0";
     console.log("reset function called");
 }
-
-// need to fix game loop
