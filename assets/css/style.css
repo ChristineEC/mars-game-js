@@ -22,6 +22,7 @@ body {
     display: none;
 }
 
+
 /* Title */
 h1 {
     font-family: Lato, sans-serif;
@@ -56,8 +57,10 @@ form {
 /* Greeting */
 h2 {
     padding-top: 1rem;
-    color: lightgreen;
+    background-color: lightgreen;
     letter-spacing: .67rem;
+    color: rgb(0, 0, 0);
+    width: 50%
 }
 
 h3 {
@@ -128,7 +131,7 @@ h3 {
 #playerChoice {
     font-style: italic;
     text-transform: uppercase;
-    color: lightgreen
+    color: lightgreen;
 }
 
 .p-spacing {
