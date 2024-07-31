@@ -6,13 +6,16 @@
 }
 
 body {
-    color: #ffffff;
     padding: 1rem;
     font-family: Roboto;
-    background-color: rgb(2, 60, 2);
     /* idea for this centering from Love Maths lesson */
     text-align: center;
     margin: 5px 0;
+}
+
+#game-wrapper {
+    color: rgb(255, 255, 255);
+    background-color: rgb(2, 60, 2);
 }
 
 .displayNone {

@@ -35,7 +35,7 @@ window.addEventListener("DOMContentLoaded", function () {
     let reset = document.getElementById("resetScore");
     reset.addEventListener("click", resetScore);
 
-    // Generate first random number
+    // // Generate first random number
     generateComputerChoice();
 });
 
@@ -50,41 +50,19 @@ function displayPlayerName(event) {
     makeYourChoice.innerHTML = "Click on an icon below to make your choice";
 }
 
-/** Toggle between light and dark mode function
- */
+// /** Toggle between light and dark mode function
+//  */
 function toggleDark(event) {
     console.log("button works");
     let toggleArea = document.getElementById("game-wrapper");
-
-   
-    if toggleArea.style.background-color == "rgb(2, 60, 2)" {
-        toggleArea.style.background-color == "#ffffff"
-    } else if (toggleArea.style.background-color == "#ffffff") {
-                toggleArea.style.background-color == "rgb(2, 60, 2)";
-            };
-            if (toggleArea.style.color == "#ffffff") {
-                toggleArea.style.color == "rgb(2, 60, 2)";
-            } else if (toggleArea.style.color == "rgb(2, 60, 2)") {
-                toggleArea.style.color == "#ffffff";
-            };
-            else {
-                console.log("toggle function doesn't work and breaks subsequent code");
-            };
-//     else {
-//         console.log("toggle function doesn't work and breaks subsequent code");
-//     };
+    toggleArea.style.backgroundColor === "rgb(2, 60, 2)"
+            ? toggleArea.style.backgroundColor = "rgb(255, 255, 255)" 
+            : toggleArea.style.backgroundColor = "rgb(2, 60, 2)";
+    toggleArea.style.color === "rgb(255, 255, 255)"
+            ? toggleArea.style.color = "rgb(2, 60, 2)"
+            : toggleArea.style.color = "rgb(255, 255, 255)";
 }
 
-
-/**Get player choice from button and 
- * display it onscreen in results section.
- * Also, display computer choice */
-function getPlayerChoice() {
-    document.getElementById("playerChoice").innerHTML = `${this.id}`;
-    console.log("got player choice from button");
-    console.log("the player choice function is being called");
-    displayComputerChoice();
-}
 
 // Generate random number for Computer Choice
 function generateComputerChoice() {
@@ -109,6 +87,16 @@ function displayComputerChoice() {
         document.getElementById("computerChoice").innerHTML = "Spock";
     };
     generateComputerChoice();
+}
+
+/**Get player choice from button and 
+ * display it onscreen in results section.
+ * Also, display computer choice */
+function getPlayerChoice() {
+    document.getElementById("playerChoice").innerHTML = `${this.id}`;
+    console.log("got player choice from button");
+    console.log("the player choice function is being called");
+    displayComputerChoice();
 }
 
 /** Compare player and computer choices to announce win loss or tie
