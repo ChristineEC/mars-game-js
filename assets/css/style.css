@@ -28,16 +28,23 @@ h1 {
     text-align: center;
     padding-bottom: 1rem;
     letter-spacing: .5rem;
+    font-weight: 600;
 }
 
 /* Intro text */
 #shortIntro {
     text-align: left;
+    line-height: 1.25;
+    letter-spacing: .12px;
 }
 
 #toggle-text {
     display: none;
     text-align: left;
+    line-height: 1.25;
+    letter-spacing: .12px;
+    padding: 1rem;
+    border: 3px dashed lightgreen;
 }
 
 /* Player Name section */
@@ -113,6 +120,7 @@ h3 {
     display: flex;
     justify-content: center space-between;
     flex-wrap: wrap;
+    font-weight: 600;
 }
 
 #displayScore {
@@ -126,7 +134,7 @@ h3 {
 #playerChoice {
     font-style: italic;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .p-spacing {
