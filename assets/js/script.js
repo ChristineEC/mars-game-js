@@ -61,8 +61,6 @@ function displayPlayerName(event) {
     let playersName = document.getElementById("playerName").value;
     let greetingSpan = document.getElementById("greetNewPlayer");
     greetingSpan.innerHTML = `Greetings ${playersName}!`;
-    let makeYourChoice = document.getElementById("makeYourChoice");
-    makeYourChoice.innerHTML = "Click on an icon below to make your choice";
 }
 
 /**Translate random number to computer choice
