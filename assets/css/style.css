@@ -126,20 +126,20 @@ h3 {
 
 #displayChoicesMade {
     display: flex;
-    justify-content: center space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
 #announceWin {
     display: flex;
-    justify-content: center space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     font-weight: 600;
 }
 
 #displayScore {
     display: flex;
-    justify-content: center space-between;
+    justify-content: space-around;
     align-items:center;
     flex-wrap: wrap;
 }
@@ -152,10 +152,9 @@ h3 {
 }
 
 .p-spacing {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 1rem; 
-    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
     letter-spacing: .25rem;
 }
 
@@ -175,10 +174,7 @@ h3 {
         gap: 1rem;
     }
     .p-spacing {
-        padding-left: .15rem;
-        padding-right: .15rem;
-        padding-top: .15rem; 
-        padding-bottom: .15rem;
+        padding: .15rem;
         letter-spacing: .15rem;
     }
 
@@ -191,12 +187,6 @@ h3 {
 #keepScore {
     padding-right: 2px;
 }
-
-@media screen and (max-width: 420px) {
-    .playerNameDiv {
-        width: 100%;
-        }
-    }
 
 @media screen and (min-width: 760px) {
 .playerNameDiv {
@@ -233,5 +223,11 @@ h3 {
         flex-wrap: wrap;
         padding-bottom: 2rem;
         gap: 3rem;
+    }
+    .p-spacing {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-bottom: 2rem;
+        letter-spacing: .25rem;
     }
 }
