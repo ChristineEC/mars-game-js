@@ -22,7 +22,6 @@ body {
     display: none;
 }
 
-
 /* Title */
 h1 {
     font-family: Lato, sans-serif;
@@ -35,36 +34,33 @@ h1 {
 #shortIntro {
     text-align: left;
 }
-.toggle-text {
+
+#toggle-text {
     display: none;
+    text-align: left;
 }
+
 /* Player Name section */
 .playerNameDiv {
     width: 75%;
     margin: auto;
 }
-
 .playerNameDiv > p, form {
     padding-top: 2rem;
 } 
-
 form {
     line-height: 1.5;
 }
 
-
-
 /* Greeting */
 h2 {
     padding-top: 1rem;
-    background-color: lightgreen;
-    letter-spacing: .67rem;
-    color: rgb(0, 0, 0);
-    width: 50%
+    letter-spacing: .33rem;
 }
 
 h3 {
     padding-top: 0.5rem;
+    padding-bottom: 1rem;
 }
 
 .float-right {
@@ -74,7 +70,6 @@ h3 {
 /* Game section */
 
 #choicesDiv {
-    padding-top: 2rem;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -95,7 +90,7 @@ h3 {
     min-height: 75px;
     border-radius: 50px;
     font-size: 300%;
-    border: 2px #fff;
+    border: 2px solid rgb(2, 60, 2);
 } 
 
 .fakelabel {
@@ -131,7 +126,7 @@ h3 {
 #playerChoice {
     font-style: italic;
     text-transform: uppercase;
-    color: lightgreen;
+    font-weight: bold;
 }
 
 .p-spacing {
@@ -142,9 +137,7 @@ h3 {
     letter-spacing: .25rem;
 }
 
-
 /* Media queries */
-
 @media screen and (max-width: 420px) {
     h2 {
         letter-spacing: .15rem;
@@ -159,7 +152,6 @@ h3 {
         padding-bottom: .5rem;
         gap: 1rem;
     }
-    
     .p-spacing {
         padding-left: .15rem;
         padding-right: .15rem;
@@ -167,7 +159,6 @@ h3 {
         padding-bottom: .15rem;
         letter-spacing: .15rem;
     }
-
     .results-wrapper {
         border: 3px dashed lightgreen;
         padding: .15rem;
@@ -182,7 +173,7 @@ h3 {
 .playerNameDiv {
     width: 90%;
     margin: auto;
-}
+    }
 }
 
 @media screen and (min-width: 760px) {
@@ -203,7 +194,6 @@ h3 {
         text-align: left;
         padding-left: 20px;
         padding-right: 20px;
-        
     }
     #choicesDiv {
         padding-top: 2rem;

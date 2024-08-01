@@ -19,9 +19,15 @@ function toggleDark(event) {
  * and player name input */
 window.addEventListener("DOMContentLoaded", function () {
 
-//Toggle button listener
+//Toggle button listeners
 let toggDark = document.getElementById("toggleDark");
 toggDark.addEventListener('click', toggleDark);
+
+let toggAbout = document.getElementById("aboutGame");
+toggAbout.addEventListener('click', showAbout);
+
+let toggHide = document.getElementById("hideAbout");
+toggHide.addEventListener('click', hideAboutText);
 
 
 //Event listener for player name input
@@ -39,6 +45,18 @@ for (let i = 0; i < choiceButtons.length; i++) {
 let reset = document.getElementById("resetScore");
 reset.addEventListener("click", resetScore);
 });
+
+//Toggle extra info about game
+function showAbout(event) {
+    let moreInfo = document.getElementById("toggle-text");
+    moreInfo.style.display = "block";
+    console.log("more Info button Working");
+}
+
+function hideAboutText(event) {
+    let hide = document.getElementById('toggle-text');
+    hide.style.display="none";
+}
 
 // Display player name in greeting
 function displayPlayerName(event) {
