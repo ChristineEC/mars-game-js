@@ -13,23 +13,20 @@ body {
     text-align: center;
     margin: 5px 0;
 }
-
 #game-wrapper {
     color: rgb(255, 255, 255);
     background-color: rgb(2, 60, 2);
 }
-
 .displayNone {
     display: none;
 }
-
 .button {
     background-color: #98FF98;
-    padding-left: .15rem;
-    padding-right: .15rem;
+    padding-left: .25rem;
+    padding-right: .25rem;
     padding-top: .15rem; 
     padding-bottom: .15rem;
-    letter-spacing: .15rem;
+    letter-spacing: .2rem;
 }
 
 /* Title */
@@ -47,7 +44,6 @@ h1 {
     line-height: 1.25;
     letter-spacing: .12px;
 }
-
 #toggle-text {
     display: none;
     text-align: left;
@@ -58,17 +54,12 @@ h1 {
 }
 
 /* Player Name section */
-.playerNameDiv {
-    width: 75%;
-    margin: auto;
-}
 .playerNameDiv > p, form {
     padding-top: 2rem;
 } 
 form {
     line-height: 1.15;
 }
-
 form label {
     width: 100%;
 }
@@ -78,18 +69,15 @@ h2 {
     padding-top: 1rem;
     letter-spacing: .33rem;
 }
-
 h3 {
     padding-top: 0.5rem;
     padding-bottom: 1rem;
 }
-
 .float-right {
     float: right;
 }
 
 /* Game section */
-
 #choicesDiv {
     width: 100%;
     display: flex;
@@ -99,12 +87,10 @@ h3 {
     padding-bottom: 2rem;
     gap: 3rem;
 }
-
 .choices {
    display: flex;
    flex-direction: column;
 }
-
 .choiceBtn {
     background-color:#98FF98;
     min-width: 75px;
@@ -113,81 +99,77 @@ h3 {
     font-size: 300%;
     border: 2px solid rgb(2, 60, 2);
 } 
-
 .fakelabel {
     padding-top: 0.5rem;
     text-align: center;
 }
+
 /* Display results section */
 .results-wrapper {
     border: 3px dashed #98FF98;
     padding: 2rem;
 }
-
 #displayChoicesMade {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
-
 #announceWin {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     font-weight: 600;
 }
-
 #displayScore {
     display: flex;
     justify-content: space-around;
     align-items:center;
     flex-wrap: wrap;
 }
-
 #computerChoice,
 #playerChoice {
     font-style: italic;
     text-transform: uppercase;
     font-weight: 600;
 }
-
 .p-spacing {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     letter-spacing: .25rem;
 }
 
 /* Media queries */
 @media screen and (max-width: 420px) {
-    h2 {
-        letter-spacing: .15rem;
+h2 {
+    letter-spacing: .15rem;
     }
-    #choicesDiv {
-        padding-top: .5rem;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        padding-bottom: .5rem;
-        gap: 1rem;
+#choicesDiv {
+    padding-top: .5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: .5rem;
+    gap: 1rem;
     }
-    .p-spacing {
-        padding: .15rem;
-        letter-spacing: .15rem;
+.p-spacing {
+    padding: .15rem;
+    letter-spacing: .15rem;
     }
 
-    .results-wrapper {
-        border: 3px dashed #98FF98;
-        padding: .15rem;
+.results-wrapper {
+    border: 3px dashed #98FF98;
+    padding: .15rem;
     }
-}
-
 #keepScore {
     padding-right: 2px;
+    }
 }
 
+/** Media Queries */
 @media screen and (min-width: 760px) {
 .playerNameDiv {
     width: 90%;
@@ -195,39 +177,32 @@ h3 {
     }
 }
 
-@media screen and (min-width: 760px) {
-    
-}
-
 @media screen and (min-width: 960px) {
-
-    body {
-        margin-top: 30px;
-        margin-left: 200px;
-        margin-right: 200px;
+body {
+    margin-top: 30px;
+    margin-left: 200px;
+    margin-right: 200px;
     }
-    h1 {
-        padding-bottom: 30px;
+h1 {
+    padding-bottom: 30px;
     }
-    #shortIntro {
-        text-align: left;
-        padding-left: 20px;
-        padding-right: 20px;
+#shortIntro {
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
     }
-    #choicesDiv {
-        padding-top: 2rem;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        padding-bottom: 2rem;
-        gap: 3rem;
+#choicesDiv {
+    padding-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 2rem;
+    gap: 3rem;
     }
-    .p-spacing {
-        padding-left: 2rem;
-        padding-right: 2rem;
-        padding-bottom: 2rem;
-        letter-spacing: .25rem;
+.p-spacing {
+    padding: 2rem;
+    letter-spacing: .25rem;
     }
 }

@@ -1,10 +1,9 @@
 /** Toggle between light and dark mode function */
 function toggleDark(event) {
-    console.log("button works");
     let toggleArea = document.getElementById("game-wrapper");
 
     if (toggleArea.style.backgroundColor === "rgb(2, 60, 2)") {
-        toggleArea.style.backgroundColor = "rgb(255, 255, 255)"
+        toggleArea.style.backgroundColor = "rgb(255, 255, 255)";
     } else {
         toggleArea.style.backgroundColor = "rgb(2, 60, 2)";
     }
@@ -12,7 +11,7 @@ function toggleDark(event) {
     if (toggleArea.style.color === "rgb(255, 255, 255)") {
         toggleArea.style.color = "rgb(2, 60, 2)";
     } else {
-        toggleArea.style.color = "rgb(255, 255, 255)"
+        toggleArea.style.color = "rgb(255, 255, 255)";
     }
 }
 /** Add event listeners for the buttons
@@ -36,7 +35,6 @@ nameForm.addEventListener('submit', displayPlayerName);
 
 //Event listeners for choice buttons
 let choiceButtons = document.getElementsByClassName("choiceBtn");
-console.log(choiceButtons);
 for (let i = 0; i < choiceButtons.length; i++) {
     choiceButtons[i].addEventListener('click', getPlayerChoice);
 }
@@ -50,7 +48,6 @@ reset.addEventListener("click", resetScore);
 function showAbout(event) {
     let moreInfo = document.getElementById("toggle-text");
     moreInfo.style.display = "block";
-    console.log("more Info button Working");
 }
 
 function hideAboutText(event) {
@@ -61,7 +58,7 @@ function hideAboutText(event) {
 // Display player name in greeting
 function displayPlayerName(event) {
     event.preventDefault();
-    let playersName = form.elements["playerName"].value;
+    let playersName = document.getElementById("playerName").value;
     let greetingSpan = document.getElementById("greetNewPlayer");
     greetingSpan.innerHTML = `Greetings ${playersName}!`;
     let makeYourChoice = document.getElementById("makeYourChoice");
@@ -82,16 +79,15 @@ function displayComputerChoice() {
         document.getElementById("computerChoice").innerHTML = "lizard";
     } else if (compNumber === 5) {
         document.getElementById("computerChoice").innerHTML = "Spock";
-    };
+    }
 }
 
 /**Get player choice from button and
  * display it onscreen in results section.
- * Also, display computer choice */
+ * Call the funtions to display computer choice, compare
+ * choices and increment scores */
 function getPlayerChoice() {
     document.getElementById("playerChoice").innerHTML = `${this.id}`;
-    console.log("got player choice from button");
-    console.log("the player choice function is being called");
     displayComputerChoice();
     compareChoices();
     keepScore();
@@ -102,17 +98,12 @@ function getPlayerChoice() {
 function compareChoices() {
     let playerChoice = document.getElementById("playerChoice").innerHTML;
     let computerChoice = document.getElementById("computerChoice").innerHTML;
-    console.log(document.getElementById("playerChoice").innerHTML);
-    console.log(playerChoice);
-    console.log(document.getElementById("computerChoice").innerHTML);
-    console.log(computerChoice);
-    console.log("The compare button is calling the function");
     if (playerChoice === computerChoice) {
         document.getElementById("displayWinner").innerHTML = "Tie Game";
         document.getElementById("reason").innerHTML = "";
     } else if (playerChoice === "rock") {
         if (computerChoice === "paper") {
-            document.getElementById("displayWinner").innerHTML = "Computer wins";
+            document.getElementById("displayWinner").innerHTML = "Computer wins!";
             document.getElementById("reason").innerHTML = "Paper covers rock";
         } else if (computerChoice === "scissors") {
             document.getElementById("displayWinner").innerHTML = "You win!";
@@ -121,7 +112,7 @@ function compareChoices() {
             document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Rock smashes lizard";
         } else if (computerChoice === "Spock") {
-            document.getElementById("displayWinner").innerHTML = "Computer wins";
+            document.getElementById("displayWinner").innerHTML = "Computer wins!";
             document.getElementById("reason").innerHTML = "Spock vaporizes rock";
         }
     } else if (playerChoice === "paper") {
@@ -129,10 +120,10 @@ function compareChoices() {
             document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Paper covers rock";
         } else if (computerChoice === "scissors") {
-            document.getElementById("displayWinner").innerHTML = "Computer wins";
+            document.getElementById("displayWinner").innerHTML = "Computer wins!";
             document.getElementById("reason").innerHTML = "Scissors cuts paper";
         } else if (computerChoice === "lizard") {
-            document.getElementById("displayWinner").innerHTML = "Computer wins";
+            document.getElementById("displayWinner").innerHTML = "Computer wins!";
             document.getElementById("reason").innerHTML = "Lizard eats paper";
         } else if (computerChoice === "Spock") {
             document.getElementById("displayWinner").innerHTML = "You win!";
@@ -149,18 +140,18 @@ function compareChoices() {
             document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Scissors decapitates lizard";
         } else if (computerChoice === "Spock") {
-            document.getElementById("displayWinner").innerHTML = "Computer wins";
+            document.getElementById("displayWinner").innerHTML = "Computer wins!";
             document.getElementById("reason").innerHTML = "Spock smashes scissors";
         }
     } else if (playerChoice === "lizard") {
         if (computerChoice === "rock") {
-            document.getElementById("displayWinner").innerHTML = "Computer wins";
+            document.getElementById("displayWinner").innerHTML = "Computer wins!";
             document.getElementById("reason").innerHTML = "Rock smashes lizard";
         } else if (computerChoice === "paper") {
             document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Lizard eats paper";
         } else if (computerChoice === "scissors") {
-            document.getElementById("displayWinner").innerHTML = "Computer wins";
+            document.getElementById("displayWinner").innerHTML = "Computer wins!";
             document.getElementById("reason").innerHTML = "Scissors decapitates lizard";
         } else if (computerChoice === "Spock") {
             document.getElementById("displayWinner").innerHTML = "You win!";
@@ -171,13 +162,13 @@ function compareChoices() {
             document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Spock vaporizes rock";
         } else if (computerChoice === "paper") {
-            document.getElementById("displayWinner").innerHTML = "Computer wins";
+            document.getElementById("displayWinner").innerHTML = "Computer wins!";
             document.getElementById("reason").innerHTML = "Paper disproves Spock";
         } else if (computerChoice === "scissors") {
             document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Spock smashes scissors";
         } else if (computerChoice === "lizard") {
-            document.getElementById("displayWinner").innerHTML = "Computer wins";
+            document.getElementById("displayWinner").innerHTML = "Computer wins!";
             document.getElementById("reason").innerHTML = "Lizard poisons Spock";
         }
     }
@@ -191,15 +182,12 @@ function keepScore() {
     if (pointTaker === "You win!") {
         playerScore = ++playerScore;
         document.getElementById("playerScore").innerHTML = playerScore;
-    } else if (pointTaker === "Computer wins") {
+    } else if (pointTaker === "Computer wins!") {
         computerScore = ++computerScore;
         document.getElementById("computerScore").innerHTML = computerScore;
     } else if (pointTaker === "Tie Game") {
         tieScore = ++tieScore;
         document.getElementById("tieScore").innerHTML = tieScore;
-    } else {
-        alert("Something is wrong with the scoring");
-        throw ("Error in scoring function");
     }
 }
 
