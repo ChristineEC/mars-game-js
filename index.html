@@ -17,7 +17,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons//favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
     <link rel="manifest" href="assets/images/favicons/site.webmanifest">
-    
+
     <title>Welcome to Mars!</title>
 </head>
 
@@ -27,8 +27,8 @@
             <h1>Welcome to Mars!</h1>
             <p id="shortIntro">The first thing you must know is how to play Rock, Paper, Scissors, Lizard, Spock. We
                 like to keep this under wraps off-world, but we make most of our decisions this way. We've created this
-                game to teach you the rules. <button id="aboutGame" class="button">About game</button> <button
-                    id="toggleDark" class="button float-right">Dark/Light Mode</button>
+                game to teach you the rules. <button id="aboutGame" class="button" aria-label="More about the game">About game</button> <button
+                    id="toggleDark" class="button float-right" aria-label="Toggle between dark and light modes">Dark/Light Mode</button>
             </p>
             <p id="toggle-text"> Funnily enough, we got "Rock, Paper, Scissors" from y'all eons ago, but you
                 Earthlings never seem to have caught on to our* improved method. It's much better you know--fewer
@@ -47,11 +47,11 @@
                 scores back to zero to start afresh. For now, you'll be playing against the computer. But just wait
                 until you get to play against one of us! Better hurry up and learn, though, you'll be needing this skill
                 throughout your travels--more than you know, Earthling! <button id="hideAbout"
-                    class="button float-right"> Hide </button>
+                    class="button float-right" aria-label="Hide the 'About Game' paragraph"> Hide </button>
             </p>
             <div class="playerNameDiv">
                 <form action="/index.html" method="get" id="form">
-                    <label for="playerName">Please enter a player name. No one here uses their real name, so make it a
+                    <label for="playerName" aria-label="Enter a fun player name">Please enter a player name. No one here uses their real name, so make it a
                         good one!</label>
                     <input type="text" id="playerName" name="playername" placeholder="Player name" maxlength="15">
                     <button class="button">Go!</button>
@@ -65,27 +65,27 @@
             <h3 class="displayNone">Game section</h3>
             <div id="choicesDiv">
                 <div class="choices">
-                    <button class="choiceBtn" id="rock"><i class="fa-regular fa-hand-back-fist"></i></button>
+                    <button class="choiceBtn" id="rock"><i class="fa-regular fa-hand-back-fist" aria-label="rock"></i></button>
                     <label for="rock" class="displayNone">Rock</label>
                     <p class="fakelabel">ROCK</p>
                 </div>
                 <div class="choices">
-                    <button class="choiceBtn" id="paper"><i class="fa-regular fa-hand"></i></button>
+                    <button class="choiceBtn" id="paper" aria-label="paper"><i class="fa-regular fa-hand"></i></button>
                     <label for="paper" class="displayNone">Paper</label>
                     <p class="fakelabel">PAPER</p>
                 </div>
                 <div class="choices">
-                    <button class="choiceBtn" id="scissors"><i class="fa-regular fa-hand-scissors"></i></button>
+                    <button class="choiceBtn" id="scissors" aria-label="scissors"><i class="fa-regular fa-hand-scissors"></i></button>
                     <label for="scissors" class="displayNone">Scissors</label>
                     <p class="fakelabel">SCISSORS</p>
                 </div>
                 <div class="choices">
-                    <button class="choiceBtn" id="lizard"><i class="fa-regular fa-hand-lizard"></i></button>
+                    <button class="choiceBtn" id="lizard" aria-label="lizard"><i class="fa-regular fa-hand-lizard"></i></button>
                     <label for="lizard" class="displayNone">Lizard</label>
                     <p class="fakelabel">LIZARD</p>
                 </div>
                 <div class="choices">
-                    <button class="choiceBtn" id="spock"><i class="fa-regular fa-hand-spock"></i></button>
+                    <button class="choiceBtn" id="spock" aria-label="Spock"><i class="fa-regular fa-hand-spock"></i></button>
                     <label for="spock" class="displayNone">Spock</label>
                     <p class="fakelabel">SPOCK</p>
                 </div>
@@ -119,7 +119,7 @@
                         <p>Ties: <span id="tieScore">0</span></p>
                     </div>
                     <div>
-                        <button id="resetScore" class="button">Reset score</button>
+                        <button id="resetScore" class="button" aria-label="Reset score">Reset score</button>
                     </div>
                 </div>
             </div>
