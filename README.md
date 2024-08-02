@@ -55,7 +55,7 @@ Screenshots of the scoring section before and after first play:
 
 Regular testing was done on the code throughout development, mainly through the use of console.logs and through reading errors in the console in Chrome dev tools. Once the game no longer threw any errors and functioned perfectly in Chrome from a user perspective, it was then tested in Microsoft Edge, Firefox, Opera GX, and Safari and on an iPhone and an android phone. No problems were encountered. The HTML, CSS, and JavaScript files were passed through validators, as described below. In addition, the game website was checked in Chrome's Lighthouse tool and scores were very good. Accessibility and best practices each at 100, performance at 91 and SEO at 90. The empty H2 heading where the name appears after username entry in a personal greeting is probably largely responsible for points off the SEO score. 
 
-More to be written here after deployment.
+After deployment the site was tested again in the browsers and on the devices mentioned above.
 
 #### Validator Testing
 ##### HTML
@@ -77,6 +77,7 @@ The JavaScript file was passed through JSHint and came back with no errors and o
 #### Bugs (none unfixed)
 There are no unfixed bugs, but a number of bugs were encountered on the way. The first ones caught were caused by extra or missing semi-colons or curly brackets, and these were easy enough to identify and squash. JSHint was helpful in this regard. The more difficult ones were hiding in punctuation, namely in the use of an occassional capital "S" in "Spock" in the code, where it was only meant to occur in inner HTML elements, and in the use of a lone exclamation point after "Computer wins". (Once the exclamation point was found it was decided to use them universally for that expression.) The errors caused by these bugs were inconsistent and I was unable to track their origin using dev tools or JSHint or Python Tutor (https://pythontutor.com/visualize.html#mode=edit). I could see errors being thrown in my console.logs but not why. Because the code was so closely entwined with the html, I was unable to make use of Python tutor for this. My mentor was helpful here, providing a fresh pair of eyes where I had become somewhat code blind. Actually, the capital "S" was easier to spot because the game was only affected when the player chose Spock. The exclamation point caused errors in scoring, but only infrequently, and I was unable to spot a pattern, so it was more difficult to spot. 
 The toggle dark/light button would only work on the second click. This was fixed by including the initial style not only in the CSS file but also in the html tag for the element targeted, after which the button functioned as it should. My mentor helped me to see the problem in dev tools, where the argument appeared as empty ("") on the first click.
+After deployment, when testing the site on an android, it was discovered that the problem of the game not properly updating when the player chooses Spock persisted. The last instances of capital 's' in Spock were removed from the code, except where the game mentions Spock in one of the rules given.
 
 ### Future Features
 The graphics of the game could be made more interesting. Some animation would definitely enhance the user experience. Also, it would be good to include the total number of games, that is, wins, losses and ties total, in case someone wanted to play in parallel with another person and compare scores more easily.
@@ -88,4 +89,6 @@ The icons in the game section were obtained [from Font Awesome](https://kit.font
 For tips on how to code the main loop of the game, comparing the user's the the computer's choices, I watched a number of YouTube videos. Although there were a number of different ways presented in the different videos, the method I used here was suggested in a video by [Coding with John](https://www.youtube.com/@CodingWithJohn). I didn't watch the video in it's entirety, but rather got the idea for the general method I would use for comparing the results. I was able to conceive of all of the necessary functions for the game independendly. I did refer back to lessons in JavaScript Essentials for reminders of correct syntax. For a reminder of how to ensure the page was loaded and event listeners in place before the game functions would run, I referred back to the Love Maths lesson.
 
 ### Deployment
-Coding was done in GitPod and deployed through GitHub. More here after deployment.
+Coding was done in GitPod and deployed through GitHub. From GitHub, the repository was opened (at this address: https://github.com/ChristineEC/mars-game-js/settings/pages ) and then the Settings menu selected. From there, the main branch was chosen to deploy the site.
+
+The site is live at [Welcome to Mars](https://christineec.github.io/mars-game-js/), or just https://christineec.github.io/mars-game-js/ .
