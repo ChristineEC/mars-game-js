@@ -12,6 +12,8 @@ In this game, the user is a newly arrived tourist on Mars. The game is introduce
 #### Responsiveness and Accessibility
 The game was designed under the "mobile first" principal. It is fully responsive to all screen sizes. Media queries in CSS are used where necessary to enhance responsiveness, as well as flexbox to make the game attractive on all screens. Accessibility is ensured through the use of large buttons and icons and the use of strongly contrasting colors. The color scheme is dark green background with white text in dark mode or white background with dark green text in light mode. The game buttons and all other interactive buttons have a bright green background in both modes, with black text or icons. Aria-labels are used where appropriate.
 
+![alt text](<Screenshot 2024-08-02 024402.png>)
+
 ![alt text](<Screenshot 2024-08-01 191539.png>)
 
 The game has three main sections, the introduction and greeting section, the game section, and the results and scoring section.
@@ -51,7 +53,7 @@ Screenshots of the scoring section before and after first play:
 
 ### Testing
 
-Regular testing was done on the code throughout development, mainly through the use of console.logs and through reading errors in the console in Chrome dev tools. Once the game no longer threw any errors and functioned perfectly in Chrome from a user perspective, it was then tested in Microsoft Edge, Firefox, Opera GX, and Safari and on an iPhone and an android phone. No problems were encountered. The html, CSS, and JavaScript files were passed through validators, as described below. 
+Regular testing was done on the code throughout development, mainly through the use of console.logs and through reading errors in the console in Chrome dev tools. Once the game no longer threw any errors and functioned perfectly in Chrome from a user perspective, it was then tested in Microsoft Edge, Firefox, Opera GX, and Safari and on an iPhone and an android phone. No problems were encountered. The HTML, CSS, and JavaScript files were passed through validators, as described below. In addition, the game website was checked in Chrome's Lighthouse tool and scores were very good. Accessibility and best practices each at 100, performance at 91 and SEO at 90. The empty H2 heading where the name appears after username entry in a personal greeting is probably largely responsible for points off the SEO score. 
 
 More to be written here after deployment.
 
@@ -75,6 +77,10 @@ The JavaScript file was passed through JSHint and came back with no errors and o
 #### Bugs (none unfixed)
 There are no unfixed bugs, but a number of bugs were encountered on the way. The first ones caught were caused by extra or missing semi-colons or curly brackets, and these were easy enough to identify and squash. JSHint was helpful in this regard. The more difficult ones were hiding in punctuation, namely in the use of an occassional capital "S" in "Spock" in the code, where it was only meant to occur in inner HTML elements, and in the use of a lone exclamation point after "Computer wins". (Once the exclamation point was found it was decided to use them universally for that expression.) The errors caused by these bugs were inconsistent and I was unable to track their origin using dev tools or JSHint or Python Tutor (https://pythontutor.com/visualize.html#mode=edit). I could see errors being thrown in my console.logs but not why. Because the code was so closely entwined with the html, I was unable to make use of Python tutor for this. My mentor was helpful here, providing a fresh pair of eyes where I had become somewhat code blind. Actually, the capital "S" was easier to spot because the game was only affected when the player chose Spock. The exclamation point caused errors in scoring, but only infrequently, and I was unable to spot a pattern, so it was more difficult to spot. 
 The toggle dark/light button would only work on the second click. This was fixed by including the initial style not only in the CSS file but also in the html tag for the element targeted, after which the button functioned as it should. My mentor helped me to see the problem in dev tools, where the argument appeared as empty ("") on the first click.
+
+### Future Features
+It would be interesting to enable two players to play against the computer at once, as the game suddenly becomes more complex (and more interesting with more than 2 players.
+It would also be good to have a "best of 3" or "best of 5" option, or something similar.
 
 ### Credits
 [Google Fonts](https://fonts.google.com/) were used for the text styling.
