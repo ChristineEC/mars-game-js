@@ -76,7 +76,7 @@ function displayComputerChoice() {
     } else if (compNumber === 4) {
         document.getElementById("computerChoice").innerHTML = "lizard";
     } else if (compNumber === 5) {
-        document.getElementById("computerChoice").innerHTML = "Spock";
+        document.getElementById("computerChoice").innerHTML = "spock";
     }
 }
 
@@ -109,7 +109,7 @@ function compareChoices() {
         } else if (computerChoice === "lizard") {
             document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Rock smashes lizard";
-        } else if (computerChoice === "Spock") {
+        } else if (computerChoice === "spock") {
             document.getElementById("displayWinner").innerHTML = "Computer wins!";
             document.getElementById("reason").innerHTML = "Spock vaporizes rock";
         }
@@ -123,7 +123,7 @@ function compareChoices() {
         } else if (computerChoice === "lizard") {
             document.getElementById("displayWinner").innerHTML = "Computer wins!";
             document.getElementById("reason").innerHTML = "Lizard eats paper";
-        } else if (computerChoice === "Spock") {
+        } else if (computerChoice === "spock") {
             document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Paper disproves Spock";
         }
@@ -137,7 +137,7 @@ function compareChoices() {
         } else if (computerChoice === "lizard") {
             document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Scissors decapitates lizard";
-        } else if (computerChoice === "Spock") {
+        } else if (computerChoice === "spock") {
             document.getElementById("displayWinner").innerHTML = "Computer wins!";
             document.getElementById("reason").innerHTML = "Spock smashes scissors";
         }
@@ -151,7 +151,7 @@ function compareChoices() {
         } else if (computerChoice === "scissors") {
             document.getElementById("displayWinner").innerHTML = "Computer wins!";
             document.getElementById("reason").innerHTML = "Scissors decapitates lizard";
-        } else if (computerChoice === "Spock") {
+        } else if (computerChoice === "spock") {
             document.getElementById("displayWinner").innerHTML = "You win!";
             document.getElementById("reason").innerHTML = "Lizard poisons Spock";
         }
