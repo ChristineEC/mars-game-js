@@ -79,14 +79,13 @@ There are no unfixed bugs, but a number of bugs were encountered on the way. The
 The toggle dark/light button would only work on the second click. This was fixed by including the initial style not only in the CSS file but also in the html tag for the element targeted, after which the button functioned as it should. My mentor helped me to see the problem in dev tools, where the argument appeared as empty ("") on the first click.
 
 ### Future Features
-It would be interesting to enable two players to play against the computer at once, as the game suddenly becomes more complex (and more interesting with more than 2 players.
-It would also be good to have a "best of 3" or "best of 5" option, or something similar.
+The graphics of the game could be made more interesting. Some animation would definitely enhance the user experience. Also, it would be good to include the total number of games, that is, wins, losses and ties total, in case someone wanted to play in parallel with another person and compare scores more easily.
 
 ### Credits
 [Google Fonts](https://fonts.google.com/) were used for the text styling.
 The favicon was obtained from ([Favicon.io]https://favicon.io/).
 The icons in the game section were obtained [from Font Awesome](https://kit.fontawesome.com/14c1e6c054.js).
-For tips on how to code the main loop of the game, comparing the user's the the computer's choices, I watched a number of YouTube videos. Although there were a number of different ways presented in the different videos, the method I used here was suggested in a video by [Coding with John](https://www.youtube.com/@CodingWithJohn). I didn't watch the video in it's entirety, however, but rather got the idea for the general method I would use for comparing the results. I was able to conceive of all of the other necessary functions for the game independendly. I did refer back to lessons in JavaScript Essentials for reminders of correct syntax. For a reminder of how to ensure the page was loaded and event listeners in place before the game functions would run, I referred back to the Love Maths lesson.
+For tips on how to code the main loop of the game, comparing the user's the the computer's choices, I watched a number of YouTube videos. Although there were a number of different ways presented in the different videos, the method I used here was suggested in a video by [Coding with John](https://www.youtube.com/@CodingWithJohn). I didn't watch the video in it's entirety, but rather got the idea for the general method I would use for comparing the results. I was able to conceive of all of the necessary functions for the game independendly. I did refer back to lessons in JavaScript Essentials for reminders of correct syntax. For a reminder of how to ensure the page was loaded and event listeners in place before the game functions would run, I referred back to the Love Maths lesson.
 
 ### Deployment
 Coding was done in GitPod and deployed through GitHub. More here after deployment.
