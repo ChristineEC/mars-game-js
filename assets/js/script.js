@@ -195,5 +195,4 @@ function resetScore() {
     document.getElementById("tieScore").innerHTML = "0";
     document.getElementById("displayWinner").innerHTML = "";
     document.getElementById("reason").innerHTML = "";
-    console.log("reset function called");
 }
